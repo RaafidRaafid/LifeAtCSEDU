@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "227358020827",
+    "firebase_url": "https://lifeatcsedu.firebaseio.com",
+    "project_id": "lifeatcsedu",
+    "storage_bucket": "lifeatcsedu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227358020827:android:b60fd98ea202164a",
+        "android_client_info": {
+          "package_name": "edu.universitydhaka.cse2216.lifeatcsedu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227358020827-6lcufkp4om4hg23865hf9c6u8d1m6d07.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.universitydhaka.cse2216.lifeatcsedu",
+            "certificate_hash": "857056629446b8a6e19e9d3b9efc35d9ed44f3b6"
+          }
+        },
+        {
+          "client_id": "227358020827-hig1fuum40qfuprcqr572stvh1vp2j4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYiHVZeGOFmL3rh8ceRs3CUo4KPpuRXI0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227358020827-hig1fuum40qfuprcqr572stvh1vp2j4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
