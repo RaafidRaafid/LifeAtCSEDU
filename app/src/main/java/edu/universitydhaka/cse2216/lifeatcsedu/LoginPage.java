@@ -44,7 +44,7 @@ public class LoginPage extends Activity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = loginAuthentication.getCurrentUser();
         if(currentUser != null){
-            //get information of user to homepage, no idea how.
+            //get information of user to homepage, no idea howw.
         }
     }
 
