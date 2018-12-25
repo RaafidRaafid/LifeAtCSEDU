@@ -1,7 +1,6 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
 public class User {
-    private String username;
     private String password;
     private String email;
     private String name;
@@ -10,10 +9,6 @@ public class User {
 
     public User() {
 
-    }
-
-    public String getUsername() {
-        return username;
     }
 
     public String getPassword() {
@@ -36,10 +31,6 @@ public class User {
         return roll;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -60,8 +51,7 @@ public class User {
         this.roll = roll;
     }
 
-    public User(String username, String password, String email, String name, String batch, String roll) {
-        this.username = username;
+    public User(String password, String email, String name, String batch, String roll) {
         this.password = password;
         this.email = email;
         this.name = name;
