@@ -54,28 +54,25 @@ public class registerUser extends Activity {
     }
 
     private void addUser(){
-        String spassword = password.getText().toString().trim();
-        String sfullname = fullname.getText().toString().trim();
-        String sbatch = batch.getText().toString().trim();
-        String sroll = roll.getText().toString().trim();
-        String semail = email.getText().toString().trim();
+        final String spassword = password.getText().toString().trim();
+        final String sfullname = fullname.getText().toString().trim();
+        final String sbatch = batch.getText().toString().trim();
+        final String sroll = roll.getText().toString().trim();
+        final String semail = email.getText().toString().trim();
 
         if(TextUtils.isEmpty(spassword) || TextUtils.isEmpty(sfullname) || TextUtils.isEmpty(sbatch) || TextUtils.isEmpty(sroll) || TextUtils.isEmpty(semail)){
             Toast.makeText(this, "Please fill out all the sections",Toast.LENGTH_LONG).show();
         }else{
-            String id = databaseReference.push().getKey();
-
-            User user = new User(spassword,semail,sfullname,sbatch,sroll);
-
-            databaseReference.child(id).setValue(user);
-
             userAuthentication.createUserWithEmailAndPassword(semail,spassword)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 // Carry information of the user to the homepage or some thing :/
+                                String id = databaseReference.push().getKey();
 
+                                User user = new User(spassword,semail,sfullname,sbatch,sroll);
+                                databaseReference.child(id).setValue(user);
                             }else{
                                 Toast.makeText(registerUser.this,"Hoynai",Toast.LENGTH_LONG).show();
                             }
