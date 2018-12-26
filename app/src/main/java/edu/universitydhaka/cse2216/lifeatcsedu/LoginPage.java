@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,16 +60,31 @@ public class LoginPage extends Activity {
         String user = useremail.getText().toString().trim();
         String pass = password.getText().toString().trim();
 
+        if(!Patterns.EMAIL_ADDRESS.matcher(user).matches()){
+            //Toast.makeText(this,"Please input Email Correctly",Toast.LENGTH_LONG).show();
+            useremail.setError("Please input Email Correctly.");
+            useremail.requestFocus();
+            return;
+        }
+
         loginAuthentication.signInWithEmailAndPassword(user,pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            FirebaseUser currentUser = loginAuthentication.getCurrentUser();
+
                             Toast.makeText(LoginPage.this,"Chinsi Bro!",Toast.LENGTH_LONG).show();
+
+                            FirebaseUser currentUser = loginAuthentication.getCurrentUser();
+                            if(currentUser.isEmailVerified()){
+                                startActivity(new Intent(LoginPage.this,FrontPage.class));
+                            }else{
+                                Toast.makeText(LoginPage.this,"Verify the Email First",Toast.LENGTH_LONG).show();
+                            }
+
                             // pass information to homepage
                         }else{
-                            Toast.makeText(LoginPage.this,"Chininai bro",Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginPage.this,"Chininai bro: " + task.getException().getMessage(),Toast.LENGTH_LONG).show();
                         }
                     }
                 });
