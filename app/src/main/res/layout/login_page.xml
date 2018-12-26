@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/esmxatx"
+    android:background="@drawable/newback"
     tools:context=".LoginPage">
 
 
@@ -23,8 +24,9 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+
         android:shadowColor="@android:color/white"
-        android:textColor="@android:color/white"
+        android:textColor="#FF0000"
         android:textColorHighlight="@android:color/white"
         android:textColorHint="#808080"
         app:layout_constraintStart_toStartOf="parent" />
@@ -60,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/regiPasswordField"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="57dp"
         android:background="@color/common_google_signin_btn_text_dark_focused"
         android:gravity="center"
         android:onClick="login"
@@ -89,8 +91,10 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="260dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_alignStart="@+id/loginButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-148dp"
+        android:layout_marginTop="34dp"
         android:contentDescription="TODO"
         app:srcCompat="@drawable/logo2" />
 </RelativeLayout>
