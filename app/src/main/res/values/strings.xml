@@ -5,4 +5,7 @@
     <string name="roll">Roll</string>
     <string name="email">Email</string>
     <string name="done">Done</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="name">Name</string>
+    <string name="send">Send</string>
 </resources>
