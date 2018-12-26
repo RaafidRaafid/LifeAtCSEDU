@@ -46,6 +46,9 @@ public class LoginPage extends Activity {
         FirebaseUser currentUser = loginAuthentication.getCurrentUser();
         if(currentUser != null){
             //get information of user to homepage, no idea howw.
+            Intent intent = new Intent(this,FrontPage.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         }
     }
 
@@ -77,7 +80,9 @@ public class LoginPage extends Activity {
 
                             FirebaseUser currentUser = loginAuthentication.getCurrentUser();
                             if(currentUser.isEmailVerified()){
-                                startActivity(new Intent(LoginPage.this,FrontPage.class));
+                                Intent intent = new Intent(LoginPage.this,FrontPage.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
                             }else{
                                 Toast.makeText(LoginPage.this,"Verify the Email First",Toast.LENGTH_LONG).show();
                             }
