@@ -22,7 +22,7 @@ public class LoginPage extends Activity {
     EditText password;
     Button loginButton;
     Button registerButton;
-
+    //fahim_ar_pade_na
     private FirebaseAuth loginAuthentication;
 
     @Override

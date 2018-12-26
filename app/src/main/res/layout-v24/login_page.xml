@@ -73,6 +73,7 @@
         android:background="@color/common_google_signin_btn_text_dark_focused"
         android:onClick="register"
         android:text="Register"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

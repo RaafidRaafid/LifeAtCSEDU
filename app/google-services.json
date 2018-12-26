@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "227358020827-srh4rq1jiebaus5r19i8seld7gje7ueb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.universitydhaka.cse2216.lifeatcsedu",
+            "certificate_hash": "4a227b64e579e1a049d3e1f3e83a25e803c34961"
+          }
+        },
+        {
           "client_id": "227358020827-hig1fuum40qfuprcqr572stvh1vp2j4j.apps.googleusercontent.com",
           "client_type": 3
         }
