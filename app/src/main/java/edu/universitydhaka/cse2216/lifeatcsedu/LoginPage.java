@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +24,7 @@ public class LoginPage extends Activity {
     EditText password;
     Button loginButton;
     Button registerButton;
-    //fahim_ar_pade_na
+    TextView forgotPassword;
     private FirebaseAuth loginAuthentication;
 
     @Override
@@ -35,6 +36,13 @@ public class LoginPage extends Activity {
         password = findViewById(R.id.regiPasswordField);
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginPage.this,resetPasswordPage.class));
+            }
+        });
 
         loginAuthentication = FirebaseAuth.getInstance();
     }
