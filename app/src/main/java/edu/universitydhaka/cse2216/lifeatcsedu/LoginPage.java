@@ -36,15 +36,13 @@ public class LoginPage extends Activity {
         password = findViewById(R.id.regiPasswordField);
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);
-
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this,resetPasswordPage.class));
-            }
-        });
+        forgotPassword = findViewById(R.id.forgotPasswordText);
 
         loginAuthentication = FirebaseAuth.getInstance();
+    }
+
+    public void workReset(View view){
+        startActivity(new Intent(LoginPage.this,resetPasswordPage.class));
     }
 
     @Override
