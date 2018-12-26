@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".registerUser"></activity>
         <activity android:name=".FrontPage"></activity>
+        <activity android:name=".resetPasswordPage"></activity>
     </application>
 
 </manifest>

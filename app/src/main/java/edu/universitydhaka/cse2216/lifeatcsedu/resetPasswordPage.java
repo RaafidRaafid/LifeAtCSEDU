@@ -25,7 +25,7 @@ public class resetPasswordPage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.reset_password_layout);
 
         resetEmail = findViewById(R.id.resetPasswordEmail);
         resetSend = findViewById(R.id.resetPasswordButton);
