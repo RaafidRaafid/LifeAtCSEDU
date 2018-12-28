@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class LoginPage extends Activity {
     Button loginButton;
     Button registerButton;
     TextView forgotPassword;
+    ProgressBar progbar;
     private FirebaseAuth loginAuthentication;
 
     @Override
@@ -37,6 +39,7 @@ public class LoginPage extends Activity {
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);
         forgotPassword = findViewById(R.id.tvForgotPassword);
+        progbar = findViewById(R.id.progressBar);
 
         loginAuthentication = FirebaseAuth.getInstance();
 
@@ -59,9 +62,13 @@ public class LoginPage extends Activity {
         FirebaseUser currentUser = loginAuthentication.getCurrentUser();
         if(currentUser != null){
             //get information of user to homepage, no idea howw.
-            Intent intent = new Intent(this,FrontPage.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+            if(currentUser.isEmailVerified()){
+                Intent intent = new Intent(LoginPage.this,FrontPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }else{
+                Toast.makeText(LoginPage.this,"Verify the Email And Login",Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -72,6 +79,7 @@ public class LoginPage extends Activity {
 
     public void login(View view){
         Log.d("TAG","Attempting Login");
+        //progbar.setVisibility(View.VISIBLE);
 
         String user = useremail.getText().toString().trim();
         String pass = password.getText().toString().trim();
@@ -87,6 +95,7 @@ public class LoginPage extends Activity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        //progbar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
 
                             Toast.makeText(LoginPage.this,"Chinsi Bro!",Toast.LENGTH_LONG).show();
