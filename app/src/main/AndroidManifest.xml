@@ -18,9 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registerUser"></activity>
-        <activity android:name=".FrontPage"></activity>
-        <activity android:name=".resetPasswordPage"></activity>
+        <activity android:name=".registerUser" />
+        <activity android:name=".FrontPage" />
+        <activity android:name=".resetPasswordPage" />
+        <activity android:name=".userShowPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
