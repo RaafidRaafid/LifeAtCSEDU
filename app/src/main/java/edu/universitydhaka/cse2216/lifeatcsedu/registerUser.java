@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.w3c.dom.Text;
+
 public class registerUser extends Activity {
 
     EditText password;
@@ -28,6 +30,7 @@ public class registerUser extends Activity {
     EditText batch;
     EditText roll;
     EditText email;
+    EditText phoneNumber;
     Button doneButton;
 
     private DatabaseReference databaseReference;
@@ -47,6 +50,7 @@ public class registerUser extends Activity {
         roll = findViewById(R.id.rollField);
         email = findViewById(R.id.emailField);
         doneButton = findViewById(R.id.doneButton);
+        phoneNumber = findViewById(R.id.phoneNumberField);
 
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +69,10 @@ public class registerUser extends Activity {
         final String sbatch = batch.getText().toString().trim();
         final String sroll = roll.getText().toString().trim();
         final String semail = email.getText().toString().trim();
+        final String sphoneNumber;
+
+        if(TextUtils.isEmpty(phoneNumber.getText().toString().trim())) sphoneNumber = "null";
+        else sphoneNumber = phoneNumber.getText().toString().trim();
 
         if(!Patterns.EMAIL_ADDRESS.matcher(semail).matches()){
             //Toast.makeText(this,"Please input Email Correctly",Toast.LENGTH_LONG).show();
@@ -90,13 +98,20 @@ public class registerUser extends Activity {
                                 // Carry information of the user to the homepage or some thing :/
                                 String id = databaseReference.push().getKey();
 
-                                User user = new User(spassword,semail,sfullname,sbatch,sroll);
+                                User user = new User(semail, sfullname, sbatch,sroll,sphoneNumber, sfullname + "_" + sbatch, sfullname + "_" + sbatch + "_" +sroll,false);
                                 databaseReference.child(id).setValue(user);
                                 FirebaseUser hmmttuser = userAuthentication.getCurrentUser();
                                 hmmttuser.sendEmailVerification();
 
 
                                 Toast.makeText(registerUser.this, "Verification Email Sent", Toast.LENGTH_SHORT).show();
+
+                                email.setText("");
+                                password.setText("");
+                                phoneNumber.setText("");
+                                fullname.setText("");
+                                roll.setText("");
+                                batch.setText("");
 
                                 Intent intent = new Intent(registerUser.this, LoginPage.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

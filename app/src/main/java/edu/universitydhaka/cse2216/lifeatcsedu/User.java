@@ -1,18 +1,27 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
 public class User {
-    private String password;
     private String email;
     private String name;
     private String batch;
     private String roll;
+    private String phoneNumber;
+    private String name_batch;
+    private String name_batch_roll;
+    private boolean isModerator;
 
     public User() {
-
     }
 
-    public String getPassword() {
-        return password;
+    public User(String email, String name, String batch, String roll, String phoneNumber, String name_batch, String name_batch_roll, boolean isModerator) {
+        this.email = email;
+        this.name = name;
+        this.batch = batch;
+        this.roll = roll;
+        this.phoneNumber = phoneNumber;
+        this.name_batch = name_batch;
+        this.name_batch_roll = name_batch_roll;
+        this.isModerator = isModerator;
     }
 
     public String getEmail() {
@@ -31,12 +40,29 @@ public class User {
         return roll;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getName_batch() {
+        return name_batch;
+    }
+
+    public String getName_batch_roll() {
+        return name_batch_roll;
+    }
+
+    public void setModerator(boolean moderator) {
+        isModerator = moderator;
     }
 
     public void setEmail(String email) {
         this.email = email;
+
+    }
+
+    public boolean isModerator() {
+        return isModerator;
     }
 
     public void setName(String name) {
@@ -51,14 +77,15 @@ public class User {
         this.roll = roll;
     }
 
-    public User(String password, String email, String name, String batch, String roll) {
-        this.password = password;
-        this.email = email;
-        this.name = name;
-        this.batch = batch;
-        this.roll = roll;
-
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
+    public void setName_batch(String name_batch) {
+        this.name_batch = name_batch;
+    }
 
+    public void setName_batch_roll(String name_batch_roll) {
+        this.name_batch_roll = name_batch_roll;
+    }
 }

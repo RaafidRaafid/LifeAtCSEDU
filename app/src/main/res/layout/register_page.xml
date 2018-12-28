@@ -77,4 +77,16 @@
         android:layout_marginBottom="25dp"
         android:background="@android:color/holo_green_light"
         android:text="@string/done" />
+
+    <EditText
+        android:id="@+id/phoneNumberField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rollField"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="textPersonName" />
 </RelativeLayout>
