@@ -1,89 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/newback"
-    tools:context=".LoginPage">
+    tools:context="edu.universitydhaka.cse2216.lifeatcsedu.LoginPage">
 
 
     <ImageButton
-        android:id="@+id/newsFeedButton"
-        style="@android:style/Widget.Holo.ImageButton"
-        android:layout_width="192dp"
-        android:layout_height="330dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="260dp"
-        android:gravity="center"
-        
+        android:id="@+id/imageButton"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/newwhite"
         android:src="@drawable/newsfeedlogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="191dp" />
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/newwhite"
+            android:src="@drawable/studylogo2"
+            android:tint="@color/colorPrimaryDark" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            style="@android:style/Widget.ImageButton"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/newwhite"
+            android:src="@drawable/pnslogo"
+            android:tint="@color/colorPrimaryDark" />
 
 
-    <ImageButton
-        android:id="@+id/PeopleAndStuff"
-        style="@android:style/Widget.Holo.Button"
-        android:layout_width="192dp"
-        android:layout_height="331dp"
-        android:layout_alignStart="@+id/newsFeedButton"
-        android:layout_alignParentEnd="true"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="260dp"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
-        android:src="@drawable/pnslogo"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageButton
+            android:id="@+id/imageButton7"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/newwhite"
+            android:src="@drawable/userlogo"
+            android:tint="@color/colorPrimaryDark" />
 
-    <ImageButton
-        android:id="@+id/QA"
-        style="@android:style/Widget.Holo.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="260dp"
-        android:layout_alignTop="@+id/PeopleAndStuff"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="307dp"
-        android:layout_marginEnd="0dp"
-        android:src="@drawable/qna"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/Courses"
-        style="@android:style/Widget.Holo.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="261dp"
-        android:layout_alignTop="@+id/newsFeedButton"
-        android:layout_alignEnd="@+id/QA"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="306dp"
-        android:layout_marginEnd="192dp"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
-        android:src="@drawable/courselogo"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/newwhite"
+            android:src="@drawable/qna2"
+            android:tint="@color/colorPrimaryDark" />
+    </LinearLayout>
+</LinearLayout>

@@ -18,7 +18,7 @@ public class FrontPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.frontpage_temp_version);
+        setContentView(R.layout.activity_front_page);
 
         currentlyLoggedIn = FirebaseAuth.getInstance();
         FirebaseUser currentUser = currentlyLoggedIn.getCurrentUser();
