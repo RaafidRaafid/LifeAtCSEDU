@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -13,7 +14,11 @@ public class FrontPage extends AppCompatActivity {
 
     FirebaseAuth currentlyLoggedIn;
 
-    Button toUser;
+    ImageButton toUser;
+    ImageButton toNewsfeed;
+    ImageButton toPeople;
+    ImageButton toStudy;
+    ImageButton toQA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,18 @@ public class FrontPage extends AppCompatActivity {
         currentlyLoggedIn = FirebaseAuth.getInstance();
         FirebaseUser currentUser = currentlyLoggedIn.getCurrentUser();
 
-        toUser = findViewById(R.id.gotoUser);
+        toUser = findViewById(R.id.toUser);
+        toNewsfeed = findViewById(R.id.toNewsfeed);
+        toPeople = findViewById(R.id.toPeople);
+        toStudy = findViewById(R.id.toStudy);
+        toQA = findViewById(R.id.toQA);
+
+        toUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeToUsers(v);
+            }
+        });
     }
 
     public void takeToUsers(View view){
