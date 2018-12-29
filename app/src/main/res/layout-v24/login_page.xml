@@ -8,7 +8,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:background="@drawable/newback"
-    tools:context=".LoginPage">
+    tools:context="edu.universitydhaka.cse2216.lifeatcsedu.LoginPage">
 
 
     <EditText
