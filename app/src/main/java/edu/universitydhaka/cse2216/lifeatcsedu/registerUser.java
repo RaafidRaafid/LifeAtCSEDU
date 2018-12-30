@@ -98,7 +98,7 @@ public class registerUser extends Activity {
                                 // Carry information of the user to the homepage or some thing :/
                                 String id = databaseReference.push().getKey();
 
-                                User user = new User(semail, sfullname, sbatch,sroll,sphoneNumber, sfullname + "_" + sbatch, sfullname + "_" + sbatch + "_" +sroll,false);
+                                User user = new User(semail, sfullname, sbatch,sroll,sphoneNumber, sfullname + "_" + sbatch, sfullname + "_" + sbatch + "_" + sroll,"https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg","false");
                                 databaseReference.child(id).setValue(user);
                                 FirebaseUser hmmttuser = userAuthentication.getCurrentUser();
                                 hmmttuser.sendEmailVerification();

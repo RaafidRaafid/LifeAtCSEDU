@@ -20,6 +20,8 @@ public class FrontPage extends AppCompatActivity {
     ImageButton toStudy;
     ImageButton toQA;
 
+    User nowUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,10 @@ public class FrontPage extends AppCompatActivity {
         toPeople = findViewById(R.id.toPeople);
         toStudy = findViewById(R.id.toStudy);
         toQA = findViewById(R.id.toQA);
+
+        nowUser = (User) getIntent().getParcelableExtra("current");
+        //System.out.println("ESHE GECHI FRONT E");
+        System.out.println(nowUser.getName_batch_roll() + "############");
 
         toUser.setOnClickListener(new View.OnClickListener() {
             @Override

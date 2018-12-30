@@ -18,6 +18,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginPage extends Activity {
 
@@ -27,7 +32,9 @@ public class LoginPage extends Activity {
     Button registerButton;
     TextView forgotPassword;
     ProgressBar progbar;
+
     private FirebaseAuth loginAuthentication;
+    private DatabaseReference loginPageDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,7 @@ public class LoginPage extends Activity {
         progbar = findViewById(R.id.progressBar);
 
         loginAuthentication = FirebaseAuth.getInstance();
+        loginPageDatabaseRef = FirebaseDatabase.getInstance().getReference("users");
 
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,13 +67,41 @@ public class LoginPage extends Activity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = loginAuthentication.getCurrentUser();
+        final FirebaseUser currentUser = loginAuthentication.getCurrentUser();
         if(currentUser != null){
             //get information of user to homepage, no idea howw.
             if(currentUser.isEmailVerified()){
-                Intent intent = new Intent(LoginPage.this,FrontPage.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+
+                final User[] goUser = new User[1];
+
+                loginPageDatabaseRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+                            String tempEmail = ds.getValue(User.class).getEmail();
+
+                            System.out.println(tempEmail + " " + currentUser.getEmail() + "%%%%%%%%%%%%%%");
+
+                            if(tempEmail.equals(currentUser.getEmail())){
+                                goUser[0] = ds.getValue(User.class);
+                                break;
+                            }
+                        }
+
+                        Intent intent = new Intent(LoginPage.this,FrontPage.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        System.out.println(goUser[0].getName_batch_roll() + "@@@@@@@@@@@@@");
+                        intent.putExtra("current", goUser[0]);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }else{
                 Toast.makeText(LoginPage.this,"Verify the Email And Login",Toast.LENGTH_LONG).show();
             }
