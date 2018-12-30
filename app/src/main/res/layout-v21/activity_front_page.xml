@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/studylogo2"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
 
         <ImageButton
             android:id="@+id/toPeople"
@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/pnslogo"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
 
 
     </LinearLayout>
@@ -66,7 +66,7 @@
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/userlogo"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
 
         <ImageButton
             android:id="@+id/toQA"
@@ -75,6 +75,6 @@
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/qna2"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
     </LinearLayout>
 </LinearLayout>
