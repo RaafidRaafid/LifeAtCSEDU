@@ -12,7 +12,7 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/toNewsfeed"
         style="@android:style/Widget.ImageButton"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -28,23 +28,24 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/toStudy"
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/studylogo2"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/toPeople"
             style="@android:style/Widget.ImageButton"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/pnslogo"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
 
 
     </LinearLayout>
@@ -58,22 +59,22 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/toUser"
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/userlogo"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/toQA"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/newwhite"
             android:src="@drawable/qna2"
-            android:tint="@color/colorPrimaryDark" />
+            android:tint="@color/colorPrimary" />
     </LinearLayout>
 </LinearLayout>

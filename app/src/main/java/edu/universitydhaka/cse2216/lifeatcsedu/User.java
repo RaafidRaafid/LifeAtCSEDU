@@ -1,6 +1,9 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
-public class User {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class User implements Parcelable {
     private String email;
     private String name;
     private String batch;
@@ -8,12 +11,33 @@ public class User {
     private String phoneNumber;
     private String name_batch;
     private String name_batch_roll;
-    private boolean isModerator;
+    private String dpURL;
+    private String isModerator;
+
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(email);
+        dest.writeString(name);
+        dest.writeString(batch);
+        dest.writeString(roll);
+        dest.writeString(phoneNumber);
+        dest.writeString(name_batch);
+        dest.writeString(name_batch_roll);
+        dest.writeString(dpURL);
+        dest.writeString(isModerator);
+    }
 
     public User() {
     }
 
-    public User(String email, String name, String batch, String roll, String phoneNumber, String name_batch, String name_batch_roll, boolean isModerator) {
+    public User(String email, String name, String batch, String roll, String phoneNumber, String name_batch, String name_batch_roll, String dpURL, String isModerator) {
         this.email = email;
         this.name = name;
         this.batch = batch;
@@ -21,11 +45,13 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.name_batch = name_batch;
         this.name_batch_roll = name_batch_roll;
+        this.dpURL = dpURL;
         this.isModerator = isModerator;
     }
 
     public String getEmail() {
         return email;
+
     }
 
     public String getName() {
@@ -52,17 +78,12 @@ public class User {
         return name_batch_roll;
     }
 
-    public void setModerator(boolean moderator) {
-        isModerator = moderator;
+    public String getDpURL() {
+        return dpURL;
     }
 
     public void setEmail(String email) {
         this.email = email;
-
-    }
-
-    public boolean isModerator() {
-        return isModerator;
     }
 
     public void setName(String name) {
@@ -88,4 +109,41 @@ public class User {
     public void setName_batch_roll(String name_batch_roll) {
         this.name_batch_roll = name_batch_roll;
     }
+
+    public void setDpURL(String dpURL) {
+        this.dpURL = dpURL;
+    }
+
+    public void setIsModerator(String isModerator) {
+        this.isModerator = isModerator;
+    }
+
+    public String getIsModerator() {
+        return isModerator;
+    }
+
+    public User(Parcel in){
+        this.email = in.readString();
+        this.name = in.readString();
+        this.batch = in.readString();
+        this.roll = in.readString();
+        this.phoneNumber = in.readString();
+
+        this.name_batch = in.readString();
+        this.name_batch_roll = in.readString();
+        this.dpURL = in.readString();
+        this.isModerator = in.readString();
+    }
+
+    public static final Parcelable.Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel source) {
+            return new User(source);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[0];
+        }
+    };
 }
