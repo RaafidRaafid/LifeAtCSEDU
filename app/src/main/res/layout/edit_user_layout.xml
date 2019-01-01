@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:background="@drawable/white"
+    android:layout_height="fill_parent">
+
+
+    <EditText
+        android:id="@+id/editUserBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="116dp"
+        android:hint="Change Bio"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/editUserPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="146dp"
+        android:hint="Change Phone number"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/editUserRoll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="182dp"
+        android:hint="Change roll"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/editUserBatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="221dp"
+        android:hint="Change Batch "
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/rectangle" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/editUserProfileImage"
+        android:layout_width="189dp"
+        android:layout_height="167dp"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="33dp"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:civ_border_color="#000000"
+        app:civ_border_width="3dp" />
+
+    <Button
+        android:id="@+id/editUserSelectButton"
+        style="@android:style/Widget.Button"
+        android:layout_width="119dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="19dp"
+        android:background="@drawable/white"
+        android:text="Select image" />
+
+    <EditText
+        android:id="@+id/editUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="267dp"
+        android:hint="Change Name"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/editUserDone"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:background="@drawable/newback"
+        android:text="Done"
+        android:textColor="#ffffff" />
+
+
+</RelativeLayout>

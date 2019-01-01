@@ -1,5 +1,6 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.ImageButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class FrontPage extends AppCompatActivity {
+public class FrontPage extends Activity {
 
     FirebaseAuth currentlyLoggedIn;
 
@@ -20,7 +21,7 @@ public class FrontPage extends AppCompatActivity {
     ImageButton toStudy;
     ImageButton toQA;
 
-    User nowUser;
+    String nowUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,8 @@ public class FrontPage extends AppCompatActivity {
         toStudy = findViewById(R.id.toStudy);
         toQA = findViewById(R.id.toQA);
 
-        nowUser = (User) getIntent().getParcelableExtra("current");
+        nowUser = getIntent().getStringExtra("current");
         //System.out.println("ESHE GECHI FRONT E");
-        System.out.println(nowUser.getName_batch_roll() + "############");
 
         toUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +50,7 @@ public class FrontPage extends AppCompatActivity {
 
     public void takeToUsers(View view){
         Intent intent = new Intent(this,userShowPage.class);
+        intent.putExtra("current",nowUser);
         startActivity(intent);
     }
 }

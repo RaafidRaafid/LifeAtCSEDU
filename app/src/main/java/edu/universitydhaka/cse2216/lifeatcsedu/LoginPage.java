@@ -57,6 +57,20 @@ public class LoginPage extends Activity {
                 startActivity(new Intent(LoginPage.this,resetPasswordPage.class));
             }
         });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                register();
+            }
+        });
     }
 
     /*public void workReset(View view){
@@ -72,7 +86,12 @@ public class LoginPage extends Activity {
             //get information of user to homepage, no idea howw.
             if(currentUser.isEmailVerified()){
 
-                final User[] goUser = new User[1];
+                Intent intent = new Intent(LoginPage.this,FrontPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.putExtra("current",currentUser.getEmail());
+                startActivity(intent);
+
+                /*final User[] goUser = new User[1];
 
                 loginPageDatabaseRef.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -81,7 +100,6 @@ public class LoginPage extends Activity {
                         for(DataSnapshot ds : dataSnapshot.getChildren()){
                             String tempEmail = ds.getValue(User.class).getEmail();
 
-                            System.out.println(tempEmail + " " + currentUser.getEmail() + "%%%%%%%%%%%%%%");
 
                             if(tempEmail.equals(currentUser.getEmail())){
                                 goUser[0] = ds.getValue(User.class);
@@ -91,7 +109,6 @@ public class LoginPage extends Activity {
 
                         Intent intent = new Intent(LoginPage.this,FrontPage.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        System.out.println(goUser[0].getName_batch_roll() + "@@@@@@@@@@@@@");
                         intent.putExtra("current", goUser[0]);
                         startActivity(intent);
                     }
@@ -100,7 +117,7 @@ public class LoginPage extends Activity {
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
-                });
+                }); */
 
             }else{
                 Toast.makeText(LoginPage.this,"Verify the Email And Login",Toast.LENGTH_LONG).show();
@@ -108,12 +125,12 @@ public class LoginPage extends Activity {
         }
     }
 
-    public void register(View view){
+    public void register(){
         Log.d("TAG", "mojai moja");
         startActivity(new Intent(this, registerUser.class));
     }
 
-    public void login(View view){
+    public void login(){
         Log.d("TAG","Attempting Login");
         //progbar.setVisibility(View.VISIBLE);
 
@@ -136,11 +153,41 @@ public class LoginPage extends Activity {
 
                             Toast.makeText(LoginPage.this,"Chinsi Bro!",Toast.LENGTH_LONG).show();
 
-                            FirebaseUser currentUser = loginAuthentication.getCurrentUser();
+                            final FirebaseUser currentUser = loginAuthentication.getCurrentUser();
                             if(currentUser.isEmailVerified()){
+
                                 Intent intent = new Intent(LoginPage.this,FrontPage.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                intent.putExtra("current", currentUser.getEmail());
                                 startActivity(intent);
+
+//                                final User[] goUser = new User[1];
+//
+//                                loginPageDatabaseRef.addValueEventListener(new ValueEventListener() {
+//                                    @Override
+//                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+//                                            String tempEmail = ds.getValue(User.class).getEmail();
+//
+//
+//                                            if(tempEmail.equals(currentUser.getEmail())){
+//                                                goUser[0] = ds.getValue(User.class);
+//                                                break;
+//                                            }
+//                                        }
+//
+//                                        Intent intent = new Intent(LoginPage.this,FrontPage.class);
+//                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                        intent.putExtra("current", goUser[0]);
+//                                        startActivity(intent);
+//                                    }
+//
+//                                    @Override
+//                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                                    }
+//                                });
                             }else{
                                 Toast.makeText(LoginPage.this,"Verify the Email First",Toast.LENGTH_LONG).show();
                             }
