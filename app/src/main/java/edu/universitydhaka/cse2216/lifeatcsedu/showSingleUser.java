@@ -56,14 +56,16 @@ public class showSingleUser extends Activity {
         showSingleUserAuth = FirebaseAuth.getInstance();
         currentUser = showSingleUserAuth.getCurrentUser();
         userEmail = currentUser.getEmail();
+        System.out.println("users/"+userEmail.substring(0,userEmail.length()-4));
         showSingleUserDatabaseRef = FirebaseDatabase.getInstance().getReference("users/" + userEmail.substring(0,userEmail.length()-4));
 
         showSingleUserDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
+
                 name_value.setText(user.getName());
-                email_value.setText(user.getEmail() + ".com");
+                email_value.setText(user.getEmail());
                 batch_value.setText(user.getBatch());
                 roll_value.setText(user.getRoll());
                 phoneNumber_value.setText(user.getPhoneNumber());
@@ -72,6 +74,13 @@ public class showSingleUser extends Activity {
                         .load("https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg")
                         .into(profilePicture);
 
+                System.out.println(userEmail + " " + user.getEmail() + " " + email_value.getText().toString().trim());
+
+                if(userEmail.equals(user.getEmail())){
+                    System.out.println("AGE");
+                    edit_profilePhoto_button.setVisibility(View.VISIBLE);
+                    System.out.println("PORE");
+                }
             }
 
             @Override
@@ -79,10 +88,6 @@ public class showSingleUser extends Activity {
 
             }
         });
-
-        if(userEmail.equals(email_value.getText().toString().trim())){
-            edit_profilePhoto_button.setVisibility(View.VISIBLE);
-        }
     }
 
     public void toEditProfilePicture(View view){
