@@ -43,6 +43,11 @@ public class userShowPage extends Activity {
         userPageDataBaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                mImageEmails.clear();
+                mImageNames.clear();
+                mImageURL.clear();
+
                 int i=0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     User user = ds.getValue(User.class);
