@@ -49,8 +49,7 @@ public class userListRecyclerViewAdapter extends RecyclerView.Adapter<userListRe
 
         Log.d(TAG, "onBindViewHolder: " + i);
         
-        Glide.with(context)
-                .asBitmap()
+        Glide.with(context)                .asBitmap()
                 .load(mImages.get(i))
                 .into(viewHolder.userListImage);
 
