@@ -49,7 +49,7 @@ public class userShowPage extends Activity {
                     mImageNames.add(user.getName());
                     mImageURL.add("https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg");
                     mImageEmails.add(user.getEmail());
-                    String akak = user.getEmail() + ".com";
+                    String akak = user.getEmail();
 
                     if(akak.equals(nowUser)){
                         Collections.swap(mImageNames,0,i);

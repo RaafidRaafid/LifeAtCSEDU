@@ -98,7 +98,7 @@ public class registerUser extends Activity {
                             if(task.isSuccessful()){
 
                                 User user = new User(semail, sfullname, sbatch,sroll,sphoneNumber, sfullname + "_" + sbatch, sfullname + "_" + sbatch + "_" + sroll,"https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg","false","Nothing yet.");
-                                databaseReference.child(semail.substring(0,semail.length()-4)).setValue(user);
+                                databaseReference.child(semail.replace('.','&')).setValue(user);
                                 FirebaseUser hmmttuser = userAuthentication.getCurrentUser();
                                 hmmttuser.sendEmailVerification();
 
@@ -114,6 +114,7 @@ public class registerUser extends Activity {
 
                                 Intent intent = new Intent(registerUser.this, LoginPage.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                userAuthentication.signOut();
                                 startActivity(intent);
                             }else{
                                 if(task.getException() instanceof FirebaseAuthUserCollisionException) {

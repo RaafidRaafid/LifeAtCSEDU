@@ -57,6 +57,20 @@ public class LoginPage extends Activity {
                 startActivity(new Intent(LoginPage.this,resetPasswordPage.class));
             }
         });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                register();
+            }
+        });
     }
 
     /*public void workReset(View view){
@@ -111,12 +125,12 @@ public class LoginPage extends Activity {
         }
     }
 
-    public void register(View view){
+    public void register(){
         Log.d("TAG", "mojai moja");
         startActivity(new Intent(this, registerUser.class));
     }
 
-    public void login(View view){
+    public void login(){
         Log.d("TAG","Attempting Login");
         //progbar.setVisibility(View.VISIBLE);
 

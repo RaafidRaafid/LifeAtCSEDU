@@ -73,7 +73,7 @@
         android:layout_below="@+id/tvForgotPassword"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="40dp"
         android:background="@color/common_google_signin_btn_text_dark_focused"
         android:onClick="register"

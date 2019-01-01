@@ -1,6 +1,7 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -34,7 +35,7 @@ public class showSingleUser extends Activity {
     Button toUserQuestion;
     Button toUserAnswers;
 
-    String  userEmail;
+    String  userEmail,nowUser;
     User user;
 
     @Override
@@ -56,8 +57,9 @@ public class showSingleUser extends Activity {
         showSingleUserAuth = FirebaseAuth.getInstance();
         currentUser = showSingleUserAuth.getCurrentUser();
         userEmail = currentUser.getEmail();
-        System.out.println("users/"+userEmail.substring(0,userEmail.length()-4));
-        showSingleUserDatabaseRef = FirebaseDatabase.getInstance().getReference("users/" + userEmail.substring(0,userEmail.length()-4));
+        nowUser = getIntent().getStringExtra("showUser");
+        System.out.println("users/"+nowUser.replace('.','&'));
+        showSingleUserDatabaseRef = FirebaseDatabase.getInstance().getReference("users/" +nowUser.replace('.','&'));
 
         showSingleUserDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -71,15 +73,11 @@ public class showSingleUser extends Activity {
                 phoneNumber_value.setText(user.getPhoneNumber());
                 bio_value.setText(user.getBio());
                 Glide.with(showSingleUser.this)
-                        .load("https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg")
+                        .load(user.getDpURL())
                         .into(profilePicture);
 
-                System.out.println(userEmail + " " + user.getEmail() + " " + email_value.getText().toString().trim());
-
                 if(userEmail.equals(user.getEmail())){
-                    System.out.println("AGE");
                     edit_profilePhoto_button.setVisibility(View.VISIBLE);
-                    System.out.println("PORE");
                 }
             }
 
@@ -88,10 +86,19 @@ public class showSingleUser extends Activity {
 
             }
         });
+
+        edit_profilePhoto_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toEditProfilePicture();
+            }
+        });
     }
 
-    public void toEditProfilePicture(View view){
-
+    public void toEditProfilePicture(){
+        Intent intent = new Intent(this,editUserPage.class);
+        intent.putExtra("showUser","users/"+nowUser.replace('.','&'));
+        startActivity(intent);
     }
 
     public void gotoQuestions(View view){

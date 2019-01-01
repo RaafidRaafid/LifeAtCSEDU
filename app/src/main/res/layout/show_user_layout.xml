@@ -12,7 +12,7 @@
         android:id="@+id/bio_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/email"
+        android:layout_alignTop="@+id/editUserPass"
         android:layout_alignParentStart="true"
         android:layout_marginStart="110dp"
         android:layout_marginTop="130dp"
@@ -34,7 +34,7 @@
         android:id="@+id/phone_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/email"
+        android:layout_alignTop="@+id/editUserPass"
         android:layout_alignParentStart="true"
         android:layout_marginStart="110dp"
         android:layout_marginTop="100dp"
@@ -42,7 +42,7 @@
         android:textSize="14dp" />
 
     <TextView
-        android:id="@+id/phone"
+        android:id="@+id/editUserPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -56,7 +56,7 @@
         android:id="@+id/roll_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/email"
+        android:layout_alignTop="@+id/editUserPass"
         android:layout_alignParentStart="true"
         android:layout_marginStart="110dp"
         android:layout_marginTop="68dp"
@@ -78,7 +78,7 @@
         android:id="@+id/batch_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/email"
+        android:layout_alignTop="@+id/editUserPass"
         android:layout_alignParentStart="true"
         android:layout_marginStart="110dp"
         android:layout_marginTop="32dp"
@@ -117,7 +117,7 @@
         android:layout_marginStart="-9dp"
         android:layout_marginTop="33dp"
         android:layout_marginEnd="142dp"
-        android:layout_toEndOf="@+id/phone"
+        android:layout_toEndOf="@+id/editUserPhone"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher"
         android:visibility="visible"
@@ -137,7 +137,7 @@
         android:visibility="invisible" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/editUserPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -150,7 +150,7 @@
         android:id="@+id/email_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/email"
+        android:layout_alignTop="@+id/editUserPass"
         android:layout_alignParentStart="true"
         android:layout_marginStart="110dp"
         android:layout_marginTop="1dp"
