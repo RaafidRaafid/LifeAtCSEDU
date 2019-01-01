@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:background="@drawable/white"
+    android:layout_height="fill_parent">
+
+
+    <TextView
+        android:id="@+id/bio_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="130dp"
+        android:text="blablabla.................sdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="102dp"
+        android:text="Bio :"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/phone_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="100dp"
+        android:text="+88017....."
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="133dp"
+        android:text="Phone :"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/roll_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="68dp"
+        android:text="13"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="166dp"
+        android:text="Roll :"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/batch_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="32dp"
+        android:text="23"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/batch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="202dp"
+        android:text="Batch :"
+        android:textSize="14dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="243dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="326dp"
+        android:src="@drawable/rectangle" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/singleUser_profile_image"
+        android:layout_width="189dp"
+        android:layout_height="167dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-9dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="142dp"
+        android:layout_toEndOf="@+id/phone"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:visibility="visible"
+        app:civ_border_color="#000000"
+        app:civ_border_width="3dp" />
+
+    <Button
+        android:id="@+id/Edit_photo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="9dp"
+        android:onClick="toEditProfilePicture"
+        android:text="Edit profile"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="234dp"
+        android:text="Email :"
+        android:textSize="14dp" />
+    <TextView
+        android:id="@+id/email_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="1dp"
+        android:text="blabla@gmail.com"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/name"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="1dp"
+        android:text="Rafid Ameer Mahmud"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="267dp"
+        android:text="Name :"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/toUserQuestions"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/bio_value"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/newback"
+        android:onClick="gotoQuestions"
+        android:text="Question"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/toUserAnswers"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/toUserQuestions"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/newback"
+        android:onClick="gotoAnswers"
+        android:text="Answer"
+        android:textColor="#ffffff" />
+
+
+</RelativeLayout>

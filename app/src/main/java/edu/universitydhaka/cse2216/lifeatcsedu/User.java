@@ -13,6 +13,7 @@ public class User implements Parcelable {
     private String name_batch_roll;
     private String dpURL;
     private String isModerator;
+    private String bio;
 
 
 
@@ -32,12 +33,13 @@ public class User implements Parcelable {
         dest.writeString(name_batch_roll);
         dest.writeString(dpURL);
         dest.writeString(isModerator);
+        dest.writeString(bio);
     }
 
     public User() {
     }
 
-    public User(String email, String name, String batch, String roll, String phoneNumber, String name_batch, String name_batch_roll, String dpURL, String isModerator) {
+    public User(String email, String name, String batch, String roll, String phoneNumber, String name_batch, String name_batch_roll, String dpURL, String isModerator, String bio) {
         this.email = email;
         this.name = name;
         this.batch = batch;
@@ -47,11 +49,21 @@ public class User implements Parcelable {
         this.name_batch_roll = name_batch_roll;
         this.dpURL = dpURL;
         this.isModerator = isModerator;
+        this.bio = bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public String getEmail() {
+
         return email;
 
+    }
+
+    public String getBio() {
+        return bio;
     }
 
     public String getName() {
@@ -133,6 +145,7 @@ public class User implements Parcelable {
         this.name_batch_roll = in.readString();
         this.dpURL = in.readString();
         this.isModerator = in.readString();
+        this.bio = in.readString();
     }
 
     public static final Parcelable.Creator<User> CREATOR = new Creator<User>() {
