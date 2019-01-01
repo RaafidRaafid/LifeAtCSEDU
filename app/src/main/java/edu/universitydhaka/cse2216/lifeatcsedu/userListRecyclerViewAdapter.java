@@ -1,6 +1,7 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
+import android.content.Intent;
 
 import com.bumptech.glide.Glide;
 
@@ -23,11 +26,13 @@ public class userListRecyclerViewAdapter extends RecyclerView.Adapter<userListRe
 
     private ArrayList<String> mImages = new ArrayList<>();
     private ArrayList<String> mImageNames = new ArrayList<>();
+    private ArrayList<String> mImageEmails = new ArrayList<>();
     private Context context;
 
-    public userListRecyclerViewAdapter( Context context, ArrayList<String> mImages, ArrayList<String> mImageNames) {
+    public userListRecyclerViewAdapter( Context context, ArrayList<String> mImages, ArrayList<String> mImageNames, ArrayList<String> mImageEmails) {
         this.mImages = mImages;
         this.mImageNames = mImageNames;
+        this.mImageEmails = mImageEmails;
         this.context = context;
     }
 
@@ -55,6 +60,9 @@ public class userListRecyclerViewAdapter extends RecyclerView.Adapter<userListRe
             @Override
             public void onClick(View v) {
                 //To Single User Page
+                Intent intent = new Intent(context,showSingleUser.class);
+                intent.putExtra("showUser",mImageEmails.get(i));
+                context.startActivity(intent);
                 Toast.makeText(context,mImageNames.get(i),Toast.LENGTH_LONG).show();
             }
         });

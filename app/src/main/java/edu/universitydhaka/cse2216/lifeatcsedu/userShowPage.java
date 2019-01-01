@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class userShowPage extends Activity {
 
@@ -25,6 +26,9 @@ public class userShowPage extends Activity {
 
     private ArrayList<String> mImageURL = new ArrayList<>();
     private ArrayList<String> mImageNames = new ArrayList<>();
+    private ArrayList<String> mImageEmails = new ArrayList<>();
+
+    String nowUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +38,25 @@ public class userShowPage extends Activity {
         userPageDataBaseRef = FirebaseDatabase.getInstance().getReference("users");
         userPageAuth = FirebaseAuth.getInstance();
 
+        nowUser = getIntent().getStringExtra("current");
+
         userPageDataBaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                int i=0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     User user = ds.getValue(User.class);
                     mImageNames.add(user.getName());
                     mImageURL.add("https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg");
+                    mImageEmails.add(user.getEmail());
+                    String akak = user.getEmail() + ".com";
+
+                    if(akak.equals(nowUser)){
+                        Collections.swap(mImageNames,0,i);
+                        Collections.swap(mImageURL,0,i);
+                        Collections.swap(mImageEmails,0,i);
+                    }
+                    i++;
                 }
                 initRecyclerView();
             }
@@ -56,7 +71,7 @@ public class userShowPage extends Activity {
     private void initRecyclerView(){
 
         RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        userListRecyclerViewAdapter adapter = new userListRecyclerViewAdapter(this,mImageURL,mImageNames);
+        userListRecyclerViewAdapter adapter = new userListRecyclerViewAdapter(this,mImageURL,mImageNames,mImageEmails);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
