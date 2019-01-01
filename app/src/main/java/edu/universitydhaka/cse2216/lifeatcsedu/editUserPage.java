@@ -100,8 +100,8 @@ public class editUserPage extends Activity {
         changedUser.setBatch(editUserBatch.getText().toString().trim());
         changedUser.setRoll(editUserRoll.getText().toString().trim());
         changedUser.setPhoneNumber(editUserPhoneNumber.getText().toString().trim());
-        changedUser.setBatch(editUserBatch.getText().toString().trim()+"_"+editUserRoll.getText().toString().trim());
-        changedUser.setBatch(editUserBatch.getText().toString().trim()+"_"+editUserBatch.getText().toString().trim()+"_"+editUserRoll.getText().toString().trim());
+        changedUser.setName_batch(editUserName.getText().toString().trim()+"_"+editUserBatch.getText().toString().trim());
+        changedUser.setName_batch_roll(editUserName.getText().toString().trim()+"_"+editUserBatch.getText().toString().trim()+"_"+editUserRoll.getText().toString().trim());
         changedUser.setDpURL(dpURL);
         changedUser.setBio(editUserBio.getText().toString().trim());
 
@@ -112,7 +112,7 @@ public class editUserPage extends Activity {
             }
         });
 
-
+        finish();
 
     }
 }
