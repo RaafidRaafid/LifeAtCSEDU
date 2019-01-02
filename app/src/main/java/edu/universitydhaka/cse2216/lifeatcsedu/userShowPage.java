@@ -40,6 +40,7 @@ public class userShowPage extends Activity {
 
         nowUser = getIntent().getStringExtra("current");
 
+
         userPageDataBaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -52,7 +53,7 @@ public class userShowPage extends Activity {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     User user = ds.getValue(User.class);
                     mImageNames.add(user.getName());
-                    mImageURL.add("https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg");
+                    mImageURL.add(user.getDpURL());
                     mImageEmails.add(user.getEmail());
                     String akak = user.getEmail();
 

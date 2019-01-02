@@ -38,6 +38,7 @@ public class FrontPage extends Activity {
         toQA = findViewById(R.id.toQA);
 
         nowUser = getIntent().getStringExtra("current");
+        
         //System.out.println("ESHE GECHI FRONT E");
 
         toUser.setOnClickListener(new View.OnClickListener() {
@@ -46,10 +47,22 @@ public class FrontPage extends Activity {
                 takeToUsers(v);
             }
         });
+        toNewsfeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeToNewsfeed(v);
+            }
+        });
+
     }
 
     public void takeToUsers(View view){
         Intent intent = new Intent(this,userShowPage.class);
+        intent.putExtra("current",nowUser);
+        startActivity(intent);
+    }
+    public void takeToNewsfeed(View view){
+        Intent intent = new Intent(this,noticeShowPage.class);
         intent.putExtra("current",nowUser);
         startActivity(intent);
     }

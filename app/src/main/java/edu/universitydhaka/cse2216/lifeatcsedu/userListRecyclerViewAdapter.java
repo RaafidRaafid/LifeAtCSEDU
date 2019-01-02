@@ -62,7 +62,7 @@ public class userListRecyclerViewAdapter extends RecyclerView.Adapter<userListRe
                 Intent intent = new Intent(context,showSingleUser.class);
                 intent.putExtra("showUser",mImageEmails.get(i));
                 context.startActivity(intent);
-                Toast.makeText(context,mImageNames.get(i),Toast.LENGTH_LONG).show();
+                //Toast.makeText(context,mImageNames.get(i),Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -31,7 +31,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".showSingleUser" />
-        <activity android:name=".editUserPage"></activity>
+        <activity android:name=".editUserPage" />
+        <activity android:name=".noticeShowPage" />
+        <activity android:name=".showSingleNotice" />
+        <activity android:name=".PostActivity"></activity>
     </application>
 
 </manifest>
