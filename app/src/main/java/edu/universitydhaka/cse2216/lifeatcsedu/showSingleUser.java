@@ -72,6 +72,7 @@ public class showSingleUser extends Activity {
                 roll_value.setText(user.getRoll());
                 phoneNumber_value.setText(user.getPhoneNumber());
                 bio_value.setText(user.getBio());
+                System.out.println("@@@@@@@@@" + user.getDpURL());
                 Glide.with(showSingleUser.this)
                         .load(user.getDpURL())
                         .into(profilePicture);

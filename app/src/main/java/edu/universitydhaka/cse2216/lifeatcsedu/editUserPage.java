@@ -2,6 +2,7 @@ package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -12,18 +13,26 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 
 public class editUserPage extends Activity {
 
     String userPath;
+    private final static int PICK_IMAGE_NUM = 107;
 
     private DatabaseReference editUserDatabaseRef;
+    private StorageReference editUserStorageReference;
 
     EditText editUserName;
     EditText editUserBatch;
@@ -35,6 +44,7 @@ public class editUserPage extends Activity {
     ImageView editProfilePicture;
 
     String dpURL;
+    Uri imageURI;
 
     User user;
 
@@ -46,6 +56,7 @@ public class editUserPage extends Activity {
 
         userPath = getIntent().getStringExtra("showUser");
         editUserDatabaseRef = FirebaseDatabase.getInstance().getReference(userPath);
+        editUserStorageReference = FirebaseStorage.getInstance().getReference("profilepictures");
 
         editUserName = findViewById(R.id.editUserName);
         editUserBatch = findViewById(R.id.editUserBatch);
@@ -56,7 +67,7 @@ public class editUserPage extends Activity {
         selectImage = findViewById(R.id.editUserSelectButton);
         editProfilePicture = findViewById(R.id.editUserProfileImage);
 
-        editProfilePicture.setVisibility(View.GONE);
+        doneEditButton.setVisibility(View.GONE);
 
         editUserDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -70,11 +81,12 @@ public class editUserPage extends Activity {
                 editUserBio.setText(user.getBio());
                 dpURL = user.getDpURL();
 
+                System.out.println("$$$$$$$" + user.getDpURL());
                 Glide.with(editUserPage.this)
                         .load(user.getDpURL())
                         .into(editProfilePicture);
 
-                editProfilePicture.setVisibility(View.VISIBLE);
+                doneEditButton.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -89,12 +101,38 @@ public class editUserPage extends Activity {
                 goEditProfile();
             }
         });
+
+        selectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseImage();
+            }
+        });
+    }
+
+    public void chooseImage(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent,PICK_IMAGE_NUM);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == PICK_IMAGE_NUM && resultCode == RESULT_OK && data != null && data.getData()!=null){
+            imageURI = data.getData();
+
+            Glide.with(this)
+                    .load(imageURI)
+                    .into(editProfilePicture);
+        }
     }
 
     public void goEditProfile(){
 
-        User changedUser;
-        changedUser = user;
+        final User changedUser = user;
 
         changedUser.setName(editUserName.getText().toString().trim());
         changedUser.setBatch(editUserBatch.getText().toString().trim());
@@ -105,12 +143,38 @@ public class editUserPage extends Activity {
         changedUser.setDpURL(dpURL);
         changedUser.setBio(editUserBio.getText().toString().trim());
 
-        editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
-            }
-        });
+        if(imageURI != null){
+            doneEditButton.setVisibility(View.GONE);
+            StorageReference fileReference = editUserStorageReference.child(user.getEmail().replace('.','&'));
+
+            StorageTask uploadTask = fileReference.putFile(imageURI)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            System.out.println("Picture Gese.");
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            System.out.println("Picture Hoynai");
+                        }
+                    });
+
+            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    dpURL = uri.toString();
+                    changedUser.setDpURL(dpURL);
+                    editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            });
+        }
 
         finish();
 
