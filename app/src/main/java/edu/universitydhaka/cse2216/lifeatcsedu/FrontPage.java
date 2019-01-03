@@ -51,6 +51,12 @@ public class FrontPage extends Activity {
                 takeToNewsfeed(v);
             }
         });
+        toStudy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeToStudy();
+            }
+        });
 
     }
 
@@ -61,6 +67,12 @@ public class FrontPage extends Activity {
     }
     public void takeToNewsfeed(View view){
         Intent intent = new Intent(this,noticeShowPage.class);
+        intent.putExtra("current",nowUser);
+        startActivity(intent);
+    }
+
+    public void takeToStudy(){
+        Intent intent = new Intent(this,showSemesterLIst.class);
         intent.putExtra("current",nowUser);
         startActivity(intent);
     }

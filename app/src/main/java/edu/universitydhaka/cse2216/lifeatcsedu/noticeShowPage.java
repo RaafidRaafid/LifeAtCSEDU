@@ -30,7 +30,7 @@ public class noticeShowPage extends Activity {
     String nowUser;
     User user;
 
-    Button AddPostBtn;
+    Button AddPostButton;
 
 
     @Override
@@ -39,8 +39,8 @@ public class noticeShowPage extends Activity {
         setContentView(R.layout.activity_notice_show_page);
 
         noticePageDataBaseRef = FirebaseDatabase.getInstance().getReference("notice");
-        AddPostBtn=findViewById(R.id.AddPost);
-        AddPostBtn.setVisibility(View.GONE);
+        AddPostButton=findViewById(R.id.AddPost);
+        AddPostButton.setVisibility(View.GONE);
         nowUser=getIntent().getStringExtra("current");
         System.out.println("users/"+nowUser.replace('.','&'));
         userDatabase=FirebaseDatabase.getInstance().getReference("users/"+nowUser.replace('.','&'));
@@ -52,7 +52,7 @@ public class noticeShowPage extends Activity {
                 user=dataSnapshot.getValue(User.class);
                 if(user.getIsModerator().equals("true")){
                     System.out.println("habijabi");
-                    AddPostBtn.setVisibility(View.VISIBLE);
+                    AddPostButton.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -62,7 +62,7 @@ public class noticeShowPage extends Activity {
             }
         });
 
-        AddPostBtn.setOnClickListener(new View.OnClickListener() {
+        AddPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(noticeShowPage.this,showPostList.class));

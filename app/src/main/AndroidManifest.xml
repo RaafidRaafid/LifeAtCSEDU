@@ -34,7 +34,11 @@
         <activity android:name=".editUserPage" />
         <activity android:name=".noticeShowPage" />
         <activity android:name=".showSingleNotice" />
-        <activity android:name=".showPostList"></activity>
+        <activity android:name=".showPostList" />
+        <activity android:name=".showSemesterLIst" />
+        <activity android:name=".showCourseList" />
+        <activity android:name=".showSingleCourse" />
+        <activity android:name=".addCoursePage"></activity>
     </application>
 
 </manifest>
