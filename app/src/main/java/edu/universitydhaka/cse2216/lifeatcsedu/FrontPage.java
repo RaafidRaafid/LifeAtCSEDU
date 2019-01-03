@@ -29,7 +29,7 @@ public class FrontPage extends Activity {
         setContentView(R.layout.activity_front_page);
 
         currentlyLoggedIn = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = currentlyLoggedIn.getCurrentUser();
+        //FirebaseUser currentUser = currentlyLoggedIn.getCurrentUser();
 
         toUser = findViewById(R.id.toUser);
         toNewsfeed = findViewById(R.id.toNewsfeed);
@@ -38,8 +38,6 @@ public class FrontPage extends Activity {
         toQA = findViewById(R.id.toQA);
 
         nowUser = getIntent().getStringExtra("current");
-        
-        //System.out.println("ESHE GECHI FRONT E");
 
         toUser.setOnClickListener(new View.OnClickListener() {
             @Override

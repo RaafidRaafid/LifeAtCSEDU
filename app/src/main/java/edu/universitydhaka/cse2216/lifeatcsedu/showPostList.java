@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class PostActivity extends Activity {
+public class showPostList extends Activity {
 
     private EditText mPostTitle;
     private EditText mPostDesc;
@@ -55,7 +55,7 @@ public class PostActivity extends Activity {
             notice = new Notice(title_val,desc_val,currentDateAndTime,newPost.getKey());
             mDatabase.child(newPost.getKey()).setValue(notice);
             mProgress.dismiss();
-            //startActivity(new Intent(PostActivity.this,noticeShowPage.class));
+            //startActivity(new Intent(showPostList.this,noticeShowPage.class));
             finish();
 
         }

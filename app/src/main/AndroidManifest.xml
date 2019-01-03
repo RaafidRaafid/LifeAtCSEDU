@@ -34,7 +34,7 @@
         <activity android:name=".editUserPage" />
         <activity android:name=".noticeShowPage" />
         <activity android:name=".showSingleNotice" />
-        <activity android:name=".PostActivity"></activity>
+        <activity android:name=".showPostList"></activity>
     </application>
 
 </manifest>

@@ -145,37 +145,41 @@ public class editUserPage extends Activity {
 
         if(imageURI != null){
             doneEditButton.setVisibility(View.GONE);
-            StorageReference fileReference = editUserStorageReference.child(user.getEmail().replace('.','&'));
+            final StorageReference fileReference = editUserStorageReference.child(user.getEmail().replace('.','&'));
 
             StorageTask uploadTask = fileReference.putFile(imageURI)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             System.out.println("Picture Gese.");
+                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    dpURL = uri.toString();
+                                    changedUser.setDpURL(dpURL);
+                                }
+                            });
+
+                            doneEditButton.setVisibility(View.VISIBLE);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             System.out.println("Picture Hoynai");
+                            Toast.makeText(editUserPage.this,"Failed",Toast.LENGTH_LONG).show();
+                            doneEditButton.setVisibility(View.VISIBLE);
                         }
                     });
 
-            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    dpURL = uri.toString();
-                    changedUser.setDpURL(dpURL);
-                    editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
-            });
+
         }
-
+        editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
+            }
+        });
         finish();
 
     }
