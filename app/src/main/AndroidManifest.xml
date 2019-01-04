@@ -38,7 +38,9 @@
         <activity android:name=".showSemesterLIst" />
         <activity android:name=".showCourseList" />
         <activity android:name=".showSingleCourse" />
-        <activity android:name=".addCoursePage"></activity>
+        <activity android:name=".addCoursePage" />
+        <activity android:name=".showBooksList" />
+        <activity android:name=".addBooksPage"></activity>
     </application>
 
 </manifest>

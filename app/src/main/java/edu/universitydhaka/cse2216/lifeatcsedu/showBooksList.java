@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,40 +20,41 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class noticeShowPage extends Activity {
-    private DatabaseReference noticePageDataBaseRef;
+public class showBooksList extends Activity {
+
+    private DatabaseReference booksDatabaseRef;
     private DatabaseReference userDatabase;
+    private FirebaseAuth userAuth;
+    private FirebaseUser userAuthUser;
 
-    private ArrayList<String> mNoticeTitles = new ArrayList<>();
-    private ArrayList<String> mNoticeTime = new ArrayList<>();
-    private ArrayList<String> mNoticeKey = new ArrayList<>();
+    private ArrayList<String> bookTitles = new ArrayList<>();
+    private ArrayList<String> bookLinks = new ArrayList<>();
 
-    String nowUser;
+    String nowUser,courseCode;
     User user;
 
-    Button AddPostButton;
-
+    Button addBookButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notice_show_page);
+        setContentView(R.layout.show_books_list);
 
-        noticePageDataBaseRef = FirebaseDatabase.getInstance().getReference("notice");
-        AddPostButton=findViewById(R.id.AddPost);
-        AddPostButton.setVisibility(View.GONE);
-        nowUser=getIntent().getStringExtra("current");
-        System.out.println("users/"+nowUser.replace('.','&'));
+        courseCode = getIntent().getStringExtra("courseCode");
+        booksDatabaseRef = FirebaseDatabase.getInstance().getReference("books/"+courseCode);
+        addBookButton=findViewById(R.id.addBook);
+        addBookButton.setVisibility(View.GONE);
+        userAuth = FirebaseAuth.getInstance();
+        userAuthUser = userAuth.getCurrentUser();
+        nowUser= userAuthUser.getEmail();
         userDatabase=FirebaseDatabase.getInstance().getReference("users/"+nowUser.replace('.','&'));
-
 
         userDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);
                 if(user.getIsModerator().equals("true")){
-                    System.out.println("habijabi");
-                    AddPostButton.setVisibility(View.VISIBLE);
+                    addBookButton.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -61,33 +64,31 @@ public class noticeShowPage extends Activity {
             }
         });
 
-        AddPostButton.setOnClickListener(new View.OnClickListener() {
+        addBookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(noticeShowPage.this,showPostList.class));
+
+                Intent intent = new Intent(showBooksList.this,addBooksPage.class);
+                intent.putExtra("courseCode",courseCode);
+                startActivity(intent);
             }
 
         });
 
-        noticePageDataBaseRef.addValueEventListener(new ValueEventListener() {
+        booksDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                mNoticeTitles.clear();
-                mNoticeTime.clear();
-                mNoticeKey.clear();
+                bookTitles.clear();
+                bookLinks.clear();
 
-                int i=0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    Notice notice = ds.getValue(Notice.class);
-                    mNoticeTitles.add(notice.getTitle());
-                    mNoticeTime.add(notice.getTime());
-                    mNoticeKey.add(notice.getNoticeKey());
-                    i++;
+                    Book book = ds.getValue(Book.class);
+                    if(book.getCourseCode().equals(courseCode)){
+                        bookTitles.add(book.getTitle());
+                        bookLinks.add(book.getLink());
+                    }
                 }
-                Collections.reverse(mNoticeTitles);
-                Collections.reverse(mNoticeTime);
-                Collections.reverse(mNoticeKey);
                 initRecyclerView();
             }
 
@@ -96,11 +97,12 @@ public class noticeShowPage extends Activity {
 
             }
         });
-    }
-    private void initRecyclerView(){
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        noticeListRecyclerViewAdapter adapter = new noticeListRecyclerViewAdapter(this,mNoticeTitles,mNoticeTime,mNoticeKey);
+    }
+
+    private void initRecyclerView(){
+        RecyclerView recyclerView = findViewById(R.id.recyclerv_view_books);
+        bookRecyclerViewAdapter adapter = new bookRecyclerViewAdapter(this,bookTitles,bookLinks);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
