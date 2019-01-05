@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,14 +17,20 @@
             android:layout_margin="15dp"
             android:id="@+id/sem1_1">
 
-            <TextView
+
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="1st Year 1st Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -33,14 +40,19 @@
             android:layout_margin="15dp"
             android:id="@+id/sem1_2">
 
-            <TextView
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="1st Year 2nd Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -50,14 +62,20 @@
             android:layout_margin="15dp"
             android:id="@+id/sem2_1">
 
-            <TextView
+
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="2nd Year 1st Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -65,16 +83,22 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_margin="15dp"
-            android:id="@+id/sem2_2">
+            android:id="@+id/sem2_2"
+            >
 
-            <TextView
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="2nd Year 2nd Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -84,14 +108,19 @@
             android:layout_margin="15dp"
             android:id="@+id/sem3_1">
 
-            <TextView
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="3rd Year 1st Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -101,14 +130,19 @@
             android:layout_margin="15dp"
             android:id="@+id/sem3_2">
 
-            <TextView
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="3rd Year 2nd Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -118,14 +152,19 @@
             android:layout_margin="15dp"
             android:id="@+id/sem4_1">
 
-            <TextView
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="4th Year 1st Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 
@@ -135,14 +174,19 @@
             android:layout_margin="15dp"
             android:id="@+id/sem4_2">
 
-            <TextView
+            <com.apg.mobile.roundtextview.RoundTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
                 android:text="4th Year 2nd Semester"
-                android:textColor="@android:color/black"
-                android:textSize="21sp"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"/>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="#bab8bc" />
 
         </RelativeLayout>
 

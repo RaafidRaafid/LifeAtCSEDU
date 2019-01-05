@@ -12,21 +12,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+
         <TextView
             android:id="@+id/headerNoticeList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:padding="10dp"
             android:textSize="24sp"
             tools:text="Course List" />
 
-        <Button
+        <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/AddCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Add Course"
-            android:textSize="24sp" />
+            android:layout_marginTop="8dp"
+            app:mainAllCorner="30dp"
+            app:mainBgColor="#bab8bc"
+            app:mainText="Add Course"
+            app:mainTextSize="12dp"
+            app:subAllCorner="30dp"
+            app:subText=" + " />
 
     </LinearLayout>
 
