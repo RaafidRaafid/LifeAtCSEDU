@@ -66,14 +66,18 @@ public class showSingleCourse extends Activity {
         toResources.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(showSingleCourse.this,showResourceList.class);
+                intent.putExtra("courseCode",courseCode);
+                startActivity(intent);
             }
         });
 
         toPastQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(showSingleCourse.this,showPastQuestionList.class);
+                intent.putExtra("courseCode",courseCode);
+                startActivity(intent);
             }
         });
     }

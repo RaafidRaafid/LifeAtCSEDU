@@ -29,7 +29,6 @@ public class addBooksPage extends Activity {
         add_book_done = findViewById(R.id.add_book_done);
 
         courseCode = getIntent().getStringExtra("courseCode");
-        System.out.println(courseCode + " *Before going in*");
 
         bookDatabaseRef = FirebaseDatabase.getInstance().getReference("books/"+courseCode);
 

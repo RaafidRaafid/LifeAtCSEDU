@@ -40,7 +40,11 @@
         <activity android:name=".showSingleCourse" />
         <activity android:name=".addCoursePage" />
         <activity android:name=".showBooksList" />
-        <activity android:name=".addBooksPage"></activity>
+        <activity android:name=".addBooksPage" />
+        <activity android:name=".showResourceList" />
+        <activity android:name=".showPastQuestionList" />
+        <activity android:name=".addResourcePage" />
+        <activity android:name=".addPastQuestionPage"></activity>
     </application>
 
 </manifest>
