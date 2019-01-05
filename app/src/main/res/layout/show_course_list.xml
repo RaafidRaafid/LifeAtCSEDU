@@ -32,7 +32,7 @@
             app:mainText="Add Course"
             app:mainTextSize="12dp"
             app:subAllCorner="30dp"
-            app:subText="  +  " />
+            app:subText=" + " />
 
     </LinearLayout>
 
