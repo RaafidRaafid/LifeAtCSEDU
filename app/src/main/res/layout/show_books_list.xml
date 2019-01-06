@@ -15,17 +15,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textSize="24sp"
             tools:text="Books List" />
 
-        <Button
+        <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/addBook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Add Book"
-            android:textSize="24sp" />
+            android:layout_marginTop="8dp"
+            app:mainAllCorner="30dp"
+            app:mainBgColor="#bab8bc"
+            app:mainText="Add Book"
+            app:mainTextSize="12dp"
+            app:subAllCorner="30dp"
+            app:subText=" + " />
+
 
     </LinearLayout>
 
@@ -43,7 +48,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="-19dp">
+            android:layout_marginTop="0dp">
 
         </android.support.v7.widget.RecyclerView>
 

@@ -27,10 +27,11 @@
                 android:paddingTop="15dp"
                 android:text="1st Year 1st Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple1"
+                />
 
         </RelativeLayout>
 
@@ -49,10 +50,10 @@
                 android:paddingTop="15dp"
                 android:text="1st Year 2nd Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple2" />
 
         </RelativeLayout>
 
@@ -72,10 +73,10 @@
                 android:paddingTop="15dp"
                 android:text="2nd Year 1st Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple3" />
 
         </RelativeLayout>
 
@@ -95,10 +96,10 @@
                 android:paddingTop="15dp"
                 android:text="2nd Year 2nd Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple4" />
 
         </RelativeLayout>
 
@@ -117,10 +118,10 @@
                 android:paddingTop="15dp"
                 android:text="3rd Year 1st Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple5" />
 
         </RelativeLayout>
 
@@ -139,10 +140,10 @@
                 android:paddingTop="15dp"
                 android:text="3rd Year 2nd Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple6" />
 
         </RelativeLayout>
 
@@ -161,10 +162,10 @@
                 android:paddingTop="15dp"
                 android:text="4th Year 1st Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple7" />
 
         </RelativeLayout>
 
@@ -183,10 +184,10 @@
                 android:paddingTop="15dp"
                 android:text="4th Year 2nd Semester"
                 android:textSize="20dp"
-                android:textColor="#fff"
+                android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="#bab8bc" />
+                app:bgColor="@color/purple8" />
 
         </RelativeLayout>
 
