@@ -3,7 +3,7 @@
 android:layout_width="match_parent"
 android:layout_height="120dp"
 android:padding="15dp"
-    android:background="@drawable/newwhite"
+    android:background="@drawable/user_list_back"
 android:id="@+id/user_element_layout">
 
 <de.hdodenhof.circleimageview.CircleImageView
@@ -18,7 +18,7 @@ android:id="@+id/user_element_layout">
     android:text="Canada"
     android:id="@+id/image_name"
     android:layout_toRightOf="@+id/image"
-    android:textColor="#000"
+    android:textColor="@drawable/user_list_text"
     android:layout_centerVertical="true"
     android:layout_marginLeft="30dp"
     android:textSize="17sp"/>

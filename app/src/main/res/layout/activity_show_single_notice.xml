@@ -16,7 +16,7 @@
         android:layout_marginStart="110dp"
         android:layout_marginTop="1dp"
         android:text="abc"
-        android:textSize="14dp" />
+        android:textSize="19dp" />
 
     <TextView
         android:id="@+id/title"
@@ -26,8 +26,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="485dp"
+        android:textStyle="bold"
         android:text="Title :"
-        android:textSize="14dp" />
+        android:textSize="19dp" />
 
     <TextView
         android:id="@+id/Desc"
@@ -37,8 +38,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="435dp"
+        android:textStyle="bold"
         android:text="Description :"
-        android:textSize="14dp" />
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/desc_value"
@@ -49,7 +51,7 @@
         android:layout_marginStart="110dp"
         android:layout_marginTop="1dp"
         android:text="def"
-        android:textSize="14dp" />
+        android:textSize="16dp" />
 
 
     <TextView
@@ -72,6 +74,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginBottom="70dp"
         android:text="Time :"
+        android:textStyle="bold"
         android:textSize="14dp" />
 
 

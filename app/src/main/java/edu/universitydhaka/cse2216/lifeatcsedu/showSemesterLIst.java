@@ -11,6 +11,7 @@ public class showSemesterLIst extends Activity {
 
     RelativeLayout s11,s12,s21,s22,s31,s32,s41,s42;
 
+
     String nowUer;
 
     @Override
@@ -32,6 +33,7 @@ public class showSemesterLIst extends Activity {
         s11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(showSemesterLIst.this,showCourseList.class);
                 intent.putExtra("semester","11");
                 intent.putExtra("current",nowUer);
