@@ -83,7 +83,6 @@ public class showPastQuestionList extends Activity {
 
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     PastQuestion pastQuestion = ds.getValue(PastQuestion.class);
-                    System.out.println("kop mama kop " + pastQuestion.getTitle() + " " + pastQuestion.getLink());
                     if(pastQuestion.getCourseCode().equals(courseCode)){
                         pastQuestionsTitles.add(pastQuestion.getTitle());
                         pastQuestionsLinks.add(pastQuestion.getLink());
