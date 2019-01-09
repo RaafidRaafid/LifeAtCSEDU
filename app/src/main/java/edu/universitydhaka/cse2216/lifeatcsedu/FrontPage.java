@@ -63,8 +63,16 @@ public class FrontPage extends Activity {
                 taketoOA();
             }
         });
+        toPeople.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeToPeople(v);
+            }
+        });
+
 
     }
+
 
     public void takeToUsers(){
         Intent intent = new Intent(this,userShowPage.class);
@@ -88,4 +96,11 @@ public class FrontPage extends Activity {
         //intent.putExtra("current",nowUser);
         startActivity(intent);
     }
+
+    private void takeToPeople(View view) {
+        Intent intent = new Intent(this,PeoplePage.class);
+        intent.putExtra("current",nowUser);
+        startActivity(intent);
+    }
+
 }
