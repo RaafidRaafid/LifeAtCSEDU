@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".showSingleQuestion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".showSingleQuestion"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Title : "
+                android:layout_margin="10dp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_question_title"
+                android:textSize="20dp"
+                android:hint="abc"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Tags : "
+                android:layout_margin="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.apg.mobile.roundtextview.BadgeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:mainText="cse2201"
+                    app:subText="->"
+                    android:layout_marginRight="10dp"
+                    app:mainTextSize="10dp"
+                    android:id="@+id/add_question_tag1"/>
+
+                <com.apg.mobile.roundtextview.BadgeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:mainText="cse2202"
+                    app:subText="->"
+                    android:layout_marginRight="10dp"
+                    app:mainTextSize="10dp"
+                    android:id="@+id/add_question_tag2"/>
+
+                <com.apg.mobile.roundtextview.BadgeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    app:mainText="cse2203"
+                    app:mainTextSize="10dp"
+                    app:subText="->"
+                    android:id="@+id/add_question_tag3"/>
+
+                <com.apg.mobile.roundtextview.BadgeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:mainText="cse2204"
+                    app:subText="->"
+                    android:layout_marginRight="10dp"
+                    app:mainTextSize="10dp"
+                    android:id="@+id/add_question_tag4"/>
+
+                <com.apg.mobile.roundtextview.BadgeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:mainText="cse2205"
+                    app:subText="->"
+                    android:layout_marginRight="10dp"
+                    app:mainTextSize="10dp"
+                    android:id="@+id/add_question_tag5"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                android:hint="Write the Question..."
+                android:id="@+id/add_question_description"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/add_question_recycler_view">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="done"
+            android:id="@+id/add_question_done_button"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="kukala"
+                android:id="@+id/add_tag_add_text"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="add tag"
+                android:id="@+id/add_tag_add_button"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -44,7 +44,10 @@
         <activity android:name=".showResourceList" />
         <activity android:name=".showPastQuestionList" />
         <activity android:name=".addResourcePage" />
-        <activity android:name=".addPastQuestionPage"></activity>
+        <activity android:name=".addPastQuestionPage" />
+        <activity android:name=".showQAList" />
+        <activity android:name=".showSingleQuestion" />
+        <activity android:name=".addQuestion"></activity>
     </application>
 
 </manifest>

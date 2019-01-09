@@ -42,13 +42,13 @@ public class FrontPage extends Activity {
         toUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                takeToUsers(v);
+                takeToUsers();
             }
         });
         toNewsfeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                takeToNewsfeed(v);
+                takeToNewsfeed();
             }
         });
         toStudy.setOnClickListener(new View.OnClickListener() {
@@ -57,15 +57,21 @@ public class FrontPage extends Activity {
                 takeToStudy();
             }
         });
+        toQA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                taketoOA();
+            }
+        });
 
     }
 
-    public void takeToUsers(View view){
+    public void takeToUsers(){
         Intent intent = new Intent(this,userShowPage.class);
         intent.putExtra("current",nowUser);
         startActivity(intent);
     }
-    public void takeToNewsfeed(View view){
+    public void takeToNewsfeed(){
         Intent intent = new Intent(this,noticeShowPage.class);
         intent.putExtra("current",nowUser);
         startActivity(intent);
@@ -74,6 +80,12 @@ public class FrontPage extends Activity {
     public void takeToStudy(){
         Intent intent = new Intent(this,showSemesterLIst.class);
         intent.putExtra("current",nowUser);
+        startActivity(intent);
+    }
+
+    public void taketoOA(){
+        Intent intent = new Intent(this,showQAList.class);
+        //intent.putExtra("current",nowUser);
         startActivity(intent);
     }
 }

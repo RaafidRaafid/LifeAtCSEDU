@@ -57,6 +57,8 @@ public class userShowPage extends Activity {
                     mImageEmails.add(user.getEmail());
                     String akak = user.getEmail();
 
+                    System.out.println("akulasdksajldk " + ds.getKey() + " " + user.getName());
+
                     if(akak.equals(nowUser)){
                         Collections.swap(mImageNames,0,i);
                         Collections.swap(mImageURL,0,i);
