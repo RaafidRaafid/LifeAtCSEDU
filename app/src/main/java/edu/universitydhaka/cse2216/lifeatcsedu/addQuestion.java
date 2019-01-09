@@ -65,6 +65,21 @@ public class addQuestion extends Activity {
         t[4] = findViewById(R.id.add_question_tag5);
         t[4].setVisibility(View.GONE);
 
+        for(int i=0;i<5;i++){
+            final int ti=i;
+            t[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentFilters.remove(ti);
+
+                    Intent intent = new Intent(addQuestion.this,addQuestion.class);
+                    intent.putExtra("currentFilters",currentFilters);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            });
+        }
+
         currentTitle = getIntent().getStringExtra("currentTitle");
         currentDescription = getIntent().getStringExtra("currentDescription");
 

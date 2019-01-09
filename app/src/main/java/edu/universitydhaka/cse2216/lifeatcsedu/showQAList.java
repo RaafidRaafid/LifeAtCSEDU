@@ -66,6 +66,21 @@ public class showQAList extends Activity {
         t[4].setVisibility(View.GONE);
         addButton = findViewById(R.id.addQButton);
 
+        for(int i=0;i<5;i++){
+            final int ti=i;
+            t[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentFilters.remove(ti);
+
+                    Intent intent = new Intent(showQAList.this,showQAList.class);
+                    intent.putExtra("currentFilters",currentFilters);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            });
+        }
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
