@@ -18,11 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class showSingleUser extends Activity {
 
     private FirebaseUser currentUser;
     private FirebaseAuth showSingleUserAuth;
     private DatabaseReference showSingleUserDatabaseRef;
+    private DatabaseReference userQuestionDatabaseRef;
 
     TextView name_value;
     TextView email_value;
@@ -33,10 +36,11 @@ public class showSingleUser extends Activity {
     ImageView profilePicture;
     Button edit_profilePhoto_button;
     Button toUserQuestion;
-    Button toUserAnswers;
 
     String  userEmail,nowUser;
     User user;
+
+    ArrayList<String> userFiltered = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,6 @@ public class showSingleUser extends Activity {
         bio_value = findViewById(R.id.bio_value);
         profilePicture = findViewById(R.id.singleUser_profile_image);
         edit_profilePhoto_button = findViewById(R.id.Edit_photo_button);
-        toUserAnswers = findViewById(R.id.toUserAnswers);
         toUserQuestion = findViewById(R.id.toUserQuestions);
 
         showSingleUserAuth = FirebaseAuth.getInstance();
@@ -94,6 +97,13 @@ public class showSingleUser extends Activity {
                 toEditProfilePicture();
             }
         });
+
+        toUserQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoQuestions();
+            }
+        });
     }
 
     public void toEditProfilePicture(){
@@ -102,11 +112,28 @@ public class showSingleUser extends Activity {
         startActivity(intent);
     }
 
-    public void gotoQuestions(View view){
+    public void gotoQuestions(){
 
-    }
+        userQuestionDatabaseRef = FirebaseDatabase.getInstance().getReference("user_questions/" + nowUser.replace('.','&'));
 
-    public void gotoAnswers(View view){
+        userQuestionDatabaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                userFiltered.clear();
 
+                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    userFiltered.add(ds.getKey());
+                }
+
+                Intent intent = new Intent(showSingleUser.this,showQAList.class);
+                intent.putExtra("userFiltered",userFiltered);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

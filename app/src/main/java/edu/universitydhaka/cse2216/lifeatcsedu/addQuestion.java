@@ -38,7 +38,7 @@ public class addQuestion extends Activity {
     String currentTitle,currentDescription,key;
     int index,tempo;
 
-    DatabaseReference addQuestionTQDatabaseRef,addQuestionQDatabaseRef,addQuestionQTDatabaseRef;
+    DatabaseReference addQuestionTQDatabaseRef,addQuestionQDatabaseRef,addQuestionQTDatabaseRef,addQuestionUQDatabaseRef;
     FirebaseAuth userAuth;
     FirebaseUser userUser;
     String userUserEmail;
@@ -91,6 +91,7 @@ public class addQuestion extends Activity {
         addQuestionTQDatabaseRef = FirebaseDatabase.getInstance().getReference("tag_questions");
         addQuestionQDatabaseRef = FirebaseDatabase.getInstance().getReference("questions");
         addQuestionQTDatabaseRef = FirebaseDatabase.getInstance().getReference("question_tags");
+        addQuestionUQDatabaseRef = FirebaseDatabase.getInstance().getReference("user_questions");
 
         addQuestionTQDatabaseRef.addValueEventListener(new ValueEventListener() {
 
@@ -129,6 +130,7 @@ public class addQuestion extends Activity {
                 for(String tag : currentFilters){
                     addQuestionTQDatabaseRef.child(tag).setValue(true);
                 }
+                addQuestionUQDatabaseRef.child(userUserEmail.replace('.','&')).child(key).setValue(true);
                 finish();
             }
         });

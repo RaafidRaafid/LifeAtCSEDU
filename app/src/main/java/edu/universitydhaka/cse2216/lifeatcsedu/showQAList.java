@@ -38,12 +38,14 @@ public class showQAList extends Activity {
     ArrayList<String> currentFilters = new ArrayList<>();
     ArrayList<String> questionTags = new ArrayList<>();
 
+    ArrayList<String> userFiltered = new ArrayList<>();
+
     BadgeView[] t = new BadgeView[5];
     BadgeView addButton;
 
     String filter;
 
-    int index;
+    int index,userIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,9 @@ public class showQAList extends Activity {
             t[i].setVisibility(View.VISIBLE);
         }
 
+        userFiltered = getIntent().getStringArrayListExtra("userFiltered");
+        if(userFiltered != null) userIndex =userFiltered.size();
+
         QADatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -92,7 +97,16 @@ public class showQAList extends Activity {
                 QAAskers.clear();
                 QAKeys.clear();
 
+                int ui = 0;
+
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    //System.out.println("hmm eki? " + ui + " " + ds.getKey() + " " + userFiltered.get(ui));
+                    if(userFiltered!=null){
+                        if(ui == userIndex) continue;
+
+                        if(userFiltered.get(ui).equals(ds.getKey())) ui++;
+                        else continue;
+                    }
                     QAKeys.add(ds.getKey());
                     final Question question = ds.getValue(Question.class);
 
