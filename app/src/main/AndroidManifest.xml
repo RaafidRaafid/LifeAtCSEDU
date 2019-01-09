@@ -34,7 +34,7 @@
         <activity android:name=".editUserPage" />
         <activity android:name=".noticeShowPage" />
         <activity android:name=".showSingleNotice" />
-        <activity android:name=".showPostList" />
+        <activity android:name=".addPost" />
         <activity android:name=".showSemesterLIst" />
         <activity android:name=".showCourseList" />
         <activity android:name=".showSingleCourse" />
@@ -44,7 +44,11 @@
         <activity android:name=".showResourceList" />
         <activity android:name=".showPastQuestionList" />
         <activity android:name=".addResourcePage" />
-        <activity android:name=".addPastQuestionPage"></activity>
+        <activity android:name=".addPastQuestionPage" />
+        <activity android:name=".PeoplePage" />
+        <activity android:name=".stuffShowPage" />
+        <activity android:name=".showSingleStuff" />
+        <activity android:name=".addStuff" />
     </application>
 
 </manifest>

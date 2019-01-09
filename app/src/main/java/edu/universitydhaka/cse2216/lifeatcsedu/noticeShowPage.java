@@ -64,7 +64,7 @@ public class noticeShowPage extends Activity {
         AddPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(noticeShowPage.this,showPostList.class));
+                startActivity(new Intent(noticeShowPage.this,addPost.class));
             }
 
         });
