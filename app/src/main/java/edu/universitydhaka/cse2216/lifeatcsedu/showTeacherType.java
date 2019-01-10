@@ -31,7 +31,7 @@ public class showTeacherType extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(showTeacherType.this,TeacherShowPage.class);
+                Intent intent = new Intent(showTeacherType.this,showTeacherList.class);
                 intent.putExtra("teacherType","chairman");
                 intent.putExtra("current",nowUer);
                 startActivity(intent);
@@ -41,7 +41,7 @@ public class showTeacherType extends Activity {
         professor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(showTeacherType.this,TeacherShowPage.class);
+                Intent intent = new Intent(showTeacherType.this,showTeacherList.class);
                 intent.putExtra("teacherType","professor");
                 intent.putExtra("current",nowUer);
                 startActivity(intent);
@@ -51,7 +51,7 @@ public class showTeacherType extends Activity {
         assistantProfessor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(showTeacherType.this,TeacherShowPage.class);
+                Intent intent = new Intent(showTeacherType.this,showTeacherList.class);
                 intent.putExtra("teacherType","assistant_professor");
                 intent.putExtra("current",nowUer);
                 startActivity(intent);
@@ -61,7 +61,7 @@ public class showTeacherType extends Activity {
         associateProfessor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(showTeacherType.this,TeacherShowPage.class);
+                Intent intent = new Intent(showTeacherType.this,showTeacherList.class);
                 intent.putExtra("teacherType","associate_professor");
                 intent.putExtra("current",nowUer);
                 startActivity(intent);

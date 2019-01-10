@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class userShowPage extends Activity {
+public class showUserList extends Activity {
 
     private DatabaseReference userPageDataBaseRef;
     private FirebaseAuth userPageAuth;

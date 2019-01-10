@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TeacherShowPage extends Activity {
+public class showTeacherList extends Activity {
     private DatabaseReference teacherPageDataBaseRef;
     private DatabaseReference userDatabase;
 
@@ -65,7 +65,7 @@ public class TeacherShowPage extends Activity {
         AddTeacherButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TeacherShowPage.this,addTeacher.class);
+                Intent intent = new Intent(showTeacherList.this,addTeacher.class);
                 intent.putExtra("teacherType",teacherType);
                 startActivity(intent);
             }

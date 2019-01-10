@@ -23,7 +23,7 @@
         <activity android:name=".registerUser" />
         <activity android:name=".FrontPage" />
         <activity android:name=".resetPasswordPage" />
-        <activity android:name=".userShowPage">
+        <activity android:name=".showUserList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,7 +54,7 @@
         <activity android:name=".showSingleStuff" />
         <activity android:name=".addStuff" />
         <activity android:name=".showTeacherType" />
-        <activity android:name=".TeacherShowPage" />
+        <activity android:name=".showTeacherList" />
         <activity android:name=".showSingleTeacher" />
         <activity android:name=".addTeacher" />
     </application>
