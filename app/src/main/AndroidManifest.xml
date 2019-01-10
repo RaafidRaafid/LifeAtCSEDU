@@ -47,12 +47,16 @@
         <activity android:name=".addPastQuestionPage" />
         <activity android:name=".showQAList" />
         <activity android:name=".showSingleQuestion" />
-        <activity android:name=".addQuestion"></activity>
+        <activity android:name=".addQuestion" />
         <activity android:name=".addPastQuestionPage" />
         <activity android:name=".PeoplePage" />
         <activity android:name=".stuffShowPage" />
         <activity android:name=".showSingleStuff" />
         <activity android:name=".addStuff" />
+        <activity android:name=".showTeacherType" />
+        <activity android:name=".TeacherShowPage" />
+        <activity android:name=".showSingleTeacher" />
+        <activity android:name=".addTeacher"></activity>
     </application>
 
 </manifest>
