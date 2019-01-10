@@ -56,7 +56,7 @@
         <activity android:name=".showTeacherType" />
         <activity android:name=".TeacherShowPage" />
         <activity android:name=".showSingleTeacher" />
-        <activity android:name=".addTeacher"></activity>
+        <activity android:name=".addTeacher" />
     </application>
 
 </manifest>
