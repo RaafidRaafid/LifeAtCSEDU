@@ -16,12 +16,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class showSingleCourse extends Activity {
 
     String courseCode;
 
     TextView textTitle,textCode;
-    Button toBooks,toResources,toPastQuestions;
+    Button toBooks,toResources,toPastQuestions,toQuestions;
 
     private DatabaseReference courseDatabaseRef;
 
@@ -37,15 +39,27 @@ public class showSingleCourse extends Activity {
         toBooks = findViewById(R.id.toBooks);
         toResources = findViewById(R.id.toResource);
         toPastQuestions = findViewById((R.id.toPastQuestions));
+        toQuestions = findViewById(R.id.course_to_qa);
 
         courseDatabaseRef = FirebaseDatabase.getInstance().getReference("courses/"+courseCode);
 
         courseDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Course course = dataSnapshot.getValue(Course.class);
+                final Course course = dataSnapshot.getValue(Course.class);
                 textTitle.setText(course.getTitle());
                 textCode.setText(course.getCode());
+
+                toQuestions.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ArrayList<String> currentFilters = new ArrayList<>();
+                        currentFilters.add(course.getCode());
+                        Intent intent = new Intent(showSingleCourse.this,showQAList.class);
+                        intent.putExtra("currentFilters",currentFilters);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

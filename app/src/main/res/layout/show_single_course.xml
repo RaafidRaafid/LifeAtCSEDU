@@ -68,4 +68,11 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questions"
+        android:layout_margin="10dp"
+        android:id="@+id/course_to_qa"/>
+
 </LinearLayout>

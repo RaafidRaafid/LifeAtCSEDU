@@ -38,7 +38,7 @@ public class addQuestion extends Activity {
     String currentTitle,currentDescription,key;
     int index,tempo;
 
-    DatabaseReference addQuestionTQDatabaseRef,addQuestionQDatabaseRef,addQuestionQTDatabaseRef;
+    DatabaseReference addQuestionTQDatabaseRef,addQuestionQDatabaseRef,addQuestionQTDatabaseRef,addQuestionUQDatabaseRef;
     FirebaseAuth userAuth;
     FirebaseUser userUser;
     String userUserEmail;
@@ -64,6 +64,21 @@ public class addQuestion extends Activity {
         t[3].setVisibility(View.GONE);
         t[4] = findViewById(R.id.add_question_tag5);
         t[4].setVisibility(View.GONE);
+
+        for(int i=0;i<5;i++){
+            final int ti=i;
+            t[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    currentFilters.remove(ti);
+
+                    Intent intent = new Intent(addQuestion.this,addQuestion.class);
+                    intent.putExtra("currentFilters",currentFilters);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            });
+        }
 
         currentTitle = getIntent().getStringExtra("currentTitle");
         currentDescription = getIntent().getStringExtra("currentDescription");
@@ -91,6 +106,7 @@ public class addQuestion extends Activity {
         addQuestionTQDatabaseRef = FirebaseDatabase.getInstance().getReference("tag_questions");
         addQuestionQDatabaseRef = FirebaseDatabase.getInstance().getReference("questions");
         addQuestionQTDatabaseRef = FirebaseDatabase.getInstance().getReference("question_tags");
+        addQuestionUQDatabaseRef = FirebaseDatabase.getInstance().getReference("user_questions");
 
         addQuestionTQDatabaseRef.addValueEventListener(new ValueEventListener() {
 
@@ -129,6 +145,7 @@ public class addQuestion extends Activity {
                 for(String tag : currentFilters){
                     addQuestionTQDatabaseRef.child(tag).setValue(true);
                 }
+                addQuestionUQDatabaseRef.child(userUserEmail.replace('.','&')).child(key).setValue(true);
                 finish();
             }
         });

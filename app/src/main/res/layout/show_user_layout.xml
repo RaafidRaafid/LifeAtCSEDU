@@ -191,18 +191,5 @@
         android:text="Question"
         android:textColor="#ffffff" />
 
-    <Button
-        android:id="@+id/toUserAnswers"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="11dp"
-        android:background="@drawable/newback"
-        android:onClick="gotoAnswers"
-        android:text="Answer"
-        android:textColor="#ffffff" />
-
 
 </RelativeLayout>
