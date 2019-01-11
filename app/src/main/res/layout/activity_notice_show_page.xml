@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textSize="24sp"
-            tools:text="Notice List" />
+            android:text="Notice List" />
 
         <Button
             android:id="@+id/AddPost"
@@ -44,7 +44,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="-19dp">
+            android:layout_marginTop="0dp">
 
         </android.support.v7.widget.RecyclerView>
 

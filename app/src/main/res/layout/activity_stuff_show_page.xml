@@ -16,17 +16,21 @@
             android:id="@+id/StuffList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="15dp"
             android:textSize="24sp"
-            tools:text="Stuff List" />
+            android:text="Stuff List" />
 
-        <Button
-            android:id="@+id/AddStuff"
+        <com.apg.mobile.roundtextview.BadgeView
+            android:id="@+id/AddStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Add Stuff"
-            android:textSize="24sp" />
+            android:layout_marginTop="8dp"
+            app:mainAllCorner="30dp"
+            app:mainBgColor="#bab8bc"
+            app:mainText="Add Staff"
+            app:mainTextSize="12dp"
+            app:subAllCorner="30dp"
+            app:subText=" + " />
 
     </LinearLayout>
 

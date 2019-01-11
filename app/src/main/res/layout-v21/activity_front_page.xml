@@ -17,8 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/newwhite"
         android:src="@drawable/newsfeedlogo"
+        android:background="@drawable/front_but_back"
         android:visibility="visible" />
 
     <LinearLayout
@@ -33,9 +33,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/newwhite"
             android:src="@drawable/studylogo2"
-            android:tint="@color/colorPrimary" />
+            android:background="@drawable/front_but_back"
+            android:tint="@drawable/front_but_text" />
 
         <ImageButton
             android:id="@+id/toPeople"
@@ -43,9 +43,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/newwhite"
             android:src="@drawable/pnslogo"
-            android:tint="@color/colorPrimary" />
+            android:background="@drawable/front_but_back"
+            android:tint="@drawable/front_but_text" />
 
 
     </LinearLayout>
@@ -64,17 +64,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/newwhite"
             android:src="@drawable/userlogo"
-            android:tint="@color/colorPrimary" />
+            android:background="@drawable/front_but_back"
+            android:tint="@drawable/front_but_text" />
 
         <ImageButton
             android:id="@+id/toQA"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/newwhite"
             android:src="@drawable/qna2"
-            android:tint="@color/colorPrimary" />
+            android:background="@drawable/front_but_back"
+            android:tint="@drawable/front_but_text" />
     </LinearLayout>
 </LinearLayout>

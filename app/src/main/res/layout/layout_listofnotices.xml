@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="@drawable/newwhite"
+    android:background="@drawable/user_list_back"
     android:layout_marginTop="0dp"
     android:padding="15dp"
     android:id="@+id/notice_element_layout"
@@ -19,7 +19,7 @@
         android:layout_marginTop="4dp"
         android:textAllCaps="true"
         android:text="abc"
-        android:textColor="#000"
+        android:textColor="@drawable/user_list_text"
         android:textSize="15dp" />
 
     <TextView
@@ -31,6 +31,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="9dp"
         android:text="no time"
-        android:textColor="#000"
+        android:textColor="@drawable/user_list_text"
         android:textSize="10sp" />
 </RelativeLayout>

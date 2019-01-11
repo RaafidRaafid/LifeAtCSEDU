@@ -1,29 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".PeoplePage">
+    android:background="@drawable/newback"
+    tools:context="edu.universitydhaka.cse2216.lifeatcsedu.LoginPage">
 
-    <Button
-        android:id="@+id/toStudent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Student" />
 
-    <Button
-        android:id="@+id/toTeacher"
+    <ImageButton
+        android:id="@+id/student"
+        style="@android:style/Widget.ImageButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teacher" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/student"
+        android:background="@drawable/front_but_back"
+        android:tint="@drawable/front_but_text"
+        android:visibility="visible" />
 
-    <Button
-        android:id="@+id/toStuff"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stuff" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/teacher"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/teacher"
+            android:background="@drawable/front_but_back"
+            android:tint="@drawable/front_but_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/staff"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/staff"
+            android:background="@drawable/front_but_back"
+            android:tint="@drawable/front_but_text" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
