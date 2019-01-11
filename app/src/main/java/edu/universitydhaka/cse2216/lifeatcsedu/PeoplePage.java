@@ -34,7 +34,19 @@ public class PeoplePage extends Activity {
                 takeToStuff(v);
             }
         });
+        toTeacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takeToTeacher(v);
+            }
+        });
 
+    }
+
+    private void takeToTeacher(View v) {
+        Intent intent = new Intent(this,showTeacherType.class);
+        intent.putExtra("current",nowUser);
+        startActivity(intent);
     }
 
 

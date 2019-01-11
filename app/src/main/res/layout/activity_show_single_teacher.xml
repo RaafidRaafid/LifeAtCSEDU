@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:layout_width="fill_parent"
+    android:background="@drawable/white"
+    android:layout_height="fill_parent"
+    tools:context=".showSingleTeacher">
+
+
+    <TextView
+        android:id="@+id/teacherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="485dp"
+        android:textStyle="bold"
+        android:text="Name :"
+        android:textSize="19dp" />
+
+    <TextView
+        android:id="@+id/teacherName_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/teacherName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="1dp"
+        android:text="abc"
+        android:textSize="19dp" />
+
+
+
+    <TextView
+        android:id="@+id/teacherPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="435dp"
+        android:textStyle="bold"
+        android:text="Phone Number :"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/teacherPhone_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/teacherPhone"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="1dp"
+        android:text="def"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/teacherEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="400dp"
+        android:text="Email :"
+        android:textStyle="bold"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/teacherEmail_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/teacherEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="-1dp"
+        android:text="none"
+        android:textSize="14dp" />
+
+
+
+    <TextView
+        android:id="@+id/teacherDesignation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="370dp"
+        android:text="Designation :"
+        android:textStyle="bold"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/teacherDesignation_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/teacherDesignation"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="-1dp"
+        android:text="none"
+        android:textSize="14dp" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/teacherResearchArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="300dp"
+        android:text="Research Area :"
+        android:textStyle="bold"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/teacherResearchArea_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/teacherResearchArea"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="-1dp"
+        android:text="none"
+        android:textSize="14dp" />
+
+
+
+</RelativeLayout>

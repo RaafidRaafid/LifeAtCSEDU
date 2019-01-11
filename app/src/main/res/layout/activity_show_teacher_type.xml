@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".showTeacherType"
+    android:background="@drawable/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:id="@+id/chairman">
+
+
+            <com.apg.mobile.roundtextview.RoundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
+                android:text="Chairman"
+                android:textSize="20dp"
+                android:textColor="@drawable/sem_but_text"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="@color/purple1"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:id="@+id/Professor">
+
+            <com.apg.mobile.roundtextview.RoundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
+                android:text="Professor"
+                android:textSize="20dp"
+                android:textColor="@drawable/sem_but_text"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="@color/purple2" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:id="@+id/Assistant_professor">
+
+
+            <com.apg.mobile.roundtextview.RoundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
+                android:text="Assistant Professor"
+                android:textSize="20dp"
+                android:textColor="@drawable/sem_but_text"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="@color/purple3" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:id="@+id/Associate_Professor"
+            >
+
+            <com.apg.mobile.roundtextview.RoundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
+                android:text="Associate Professor"
+                android:textSize="20dp"
+                android:textColor="@drawable/sem_but_text"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="@color/purple4" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:id="@+id/Lecturer">
+
+            <com.apg.mobile.roundtextview.RoundTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:paddingTop="15dp"
+                android:text="Lecturer"
+                android:textSize="20dp"
+                android:textColor="@drawable/sem_but_text"
+                android:layout_centerInParent="true"
+                app:allCorner="30dp"
+                app:bgColor="@color/purple5" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
