@@ -41,7 +41,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/submitButton2"
+            android:id="@+id/add_past_question_done"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"

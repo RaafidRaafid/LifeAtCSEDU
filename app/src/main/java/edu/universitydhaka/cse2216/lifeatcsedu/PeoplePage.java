@@ -11,9 +11,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class PeoplePage extends Activity {
 
-    Button toStudent;
-    Button toStuff;
-    Button toTeacher;
+    ImageButton toStudent;
+    ImageButton toStuff;
+    ImageButton toTeacher;
 
     String nowUser;
 
@@ -23,7 +23,7 @@ public class PeoplePage extends Activity {
         setContentView(R.layout.activity_people_page);
 
         toStudent = findViewById(R.id.toStudent);
-        toStuff = findViewById(R.id.toStuff);
+        toStuff = findViewById(R.id.toStaff);
         toTeacher = findViewById(R.id.toTeacher);
 
         nowUser = getIntent().getStringExtra("current");

@@ -12,7 +12,7 @@
 
 
     <ImageButton
-        android:id="@+id/student"
+        android:id="@+id/toStudent"
         style="@android:style/Widget.ImageButton"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,7 +29,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/teacher"
+            android:id="@+id/toTeacher"
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -47,7 +47,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/staff"
+            android:id="@+id/toStaff"
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"

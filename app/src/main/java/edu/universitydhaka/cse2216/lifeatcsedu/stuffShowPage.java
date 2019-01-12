@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.apg.mobile.roundtextview.BadgeView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +31,7 @@ public class stuffShowPage extends Activity {
     String nowUser;
     User user;
 
-    Button AddStuffButton;
+    BadgeView AddStuffButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class stuffShowPage extends Activity {
         setContentView(R.layout.activity_stuff_show_page);
 
         stuffPageDataBaseRef = FirebaseDatabase.getInstance().getReference("stuff");
-        AddStuffButton=findViewById(R.id.AddStuff);
+        AddStuffButton=findViewById(R.id.AddStaff);
         AddStuffButton.setVisibility(View.GONE);
         nowUser=getIntent().getStringExtra("current");
         System.out.println("users/"+nowUser.replace('.','&'));

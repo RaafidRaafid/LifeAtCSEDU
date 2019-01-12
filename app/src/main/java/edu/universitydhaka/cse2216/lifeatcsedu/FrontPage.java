@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,6 +21,8 @@ public class FrontPage extends Activity {
 
     String nowUser;
 
+    Button logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class FrontPage extends Activity {
         toPeople = findViewById(R.id.toPeople);
         toStudy = findViewById(R.id.toStudy);
         toQA = findViewById(R.id.toQA);
+        logout = findViewById(R.id.logout_button);
 
         nowUser = getIntent().getStringExtra("current");
 
@@ -64,6 +68,15 @@ public class FrontPage extends Activity {
             @Override
             public void onClick(View v) {
                 takeToPeople(v);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentlyLoggedIn.signOut();
+                Intent intent = new Intent(FrontPage.this,LoginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
 

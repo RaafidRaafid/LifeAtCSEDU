@@ -40,6 +40,8 @@ public class showQAList extends Activity {
 
     ArrayList<String> userFiltered = new ArrayList<>();
 
+    //ArrayList<BadgeView> t = new ArrayList<>();
+
     BadgeView[] t = new BadgeView[5];
     BadgeView addButton;
 
@@ -115,14 +117,13 @@ public class showQAList extends Activity {
                 int ui = 0;
 
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    //System.out.println("hmm eki? " + ui + " " + ds.getKey() + " " + userFiltered.get(ui));
                     if(userFiltered!=null){
                         if(ui == userIndex) continue;
 
                         if(userFiltered.get(ui).equals(ds.getKey())) ui++;
                         else continue;
                     }
-                    QAKeys.add(ds.getKey());
+                    final String TheKey = ds.getKey();
                     final Question question = ds.getValue(Question.class);
 
                     getQuestionTagDatabaseRefChild = questionTagDatabaseRef.child(ds.getKey());
@@ -131,8 +132,8 @@ public class showQAList extends Activity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             questionTags.clear();
-                            for(DataSnapshot ds : dataSnapshot.getChildren()){
-                                questionTags.add(ds.getValue(String.class));
+                            for(DataSnapshot dds : dataSnapshot.getChildren()){
+                                questionTags.add(dds.getValue(String.class));
                             }
 
                             Collections.sort(questionTags);
@@ -145,6 +146,7 @@ public class showQAList extends Activity {
                             }
                             System.out.println("number " + i);
                             if(i==index){
+                                QAKeys.add(TheKey);
                                 QATitles.add(question.getTitle());
                                 QAAskers.add(question.getAsker());
                                 QATimes.add(question.getTime());
