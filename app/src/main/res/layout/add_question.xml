@@ -46,61 +46,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Tags : "
-                android:layout_margin="10dp"/>
+                android:text="Selected Tags: "
+                android:textSize="20dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.apg.mobile.roundtextview.BadgeView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    app:mainText="cse2201"
-                    app:subText="->"
-                    android:layout_marginRight="10dp"
-                    app:mainTextSize="10dp"
-                    android:id="@+id/add_question_tag1"/>
-
-                <com.apg.mobile.roundtextview.BadgeView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    app:mainText="cse2202"
-                    app:subText="->"
-                    android:layout_marginRight="10dp"
-                    app:mainTextSize="10dp"
-                    android:id="@+id/add_question_tag2"/>
-
-                <com.apg.mobile.roundtextview.BadgeView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    app:mainText="cse2203"
-                    app:mainTextSize="10dp"
-                    app:subText="->"
-                    android:id="@+id/add_question_tag3"/>
-
-                <com.apg.mobile.roundtextview.BadgeView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    app:mainText="cse2204"
-                    app:subText="->"
-                    android:layout_marginRight="10dp"
-                    app:mainTextSize="10dp"
-                    android:id="@+id/add_question_tag4"/>
-
-                <com.apg.mobile.roundtextview.BadgeView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    app:mainText="cse2205"
-                    app:subText="->"
-                    android:layout_marginRight="10dp"
-                    app:mainTextSize="10dp"
-                    android:id="@+id/add_question_tag5"/>
-
-            </LinearLayout>
+                android:orientation="horizontal"
+                android:id="@+id/add_hor_tag_recycler_view">
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
 

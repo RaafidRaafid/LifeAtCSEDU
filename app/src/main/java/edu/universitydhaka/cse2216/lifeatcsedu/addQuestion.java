@@ -29,7 +29,6 @@ import java.util.Vector;
 public class addQuestion extends Activity {
 
     EditText title,description,addTagField;
-    BadgeView[] t = new BadgeView[5];
     Button doneButton,addTagButton;
 
     ArrayList<String> currentFilters = new ArrayList<>();
@@ -54,39 +53,19 @@ public class addQuestion extends Activity {
         addTagButton = findViewById(R.id.add_tag_add_button);
         addTagField = findViewById(R.id.add_tag_add_text);
 
-        t[0] = findViewById(R.id.add_question_tag1);
-        t[0].setVisibility(View.GONE);
-        t[1] = findViewById(R.id.add_question_tag2);
-        t[1].setVisibility(View.GONE);
-        t[2] = findViewById(R.id.add_question_tag3);
-        t[2].setVisibility(View.GONE);
-        t[3] = findViewById(R.id.add_question_tag4);
-        t[3].setVisibility(View.GONE);
-        t[4] = findViewById(R.id.add_question_tag5);
-        t[4].setVisibility(View.GONE);
-
-        for(int i=0;i<5;i++){
-            final int ti=i;
-            t[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    currentFilters.remove(ti);
-
-                    Intent intent = new Intent(addQuestion.this,addQuestion.class);
-                    intent.putExtra("currentFilters",currentFilters);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-            });
-        }
-
         currentTitle = getIntent().getStringExtra("currentTitle");
         currentDescription = getIntent().getStringExtra("currentDescription");
 
         if(currentTitle==null) title.setText("");
-        else title.setText(currentTitle);
+        else{
+            title.setText(currentTitle);
+            System.out.println("gelo T " + currentTitle);
+        }
         if(currentDescription==null) description.setText("");
-        else description.setText(currentDescription);
+        else{
+            description.setText(currentDescription);
+            System.out.println("gelo D " + currentDescription);
+        }
 
         userAuth = FirebaseAuth.getInstance();
         userUser = userAuth.getCurrentUser();
@@ -98,10 +77,6 @@ public class addQuestion extends Activity {
         }
         if(currentFilters != null) index = currentFilters.size();
         else index =0;
-        for(int i=0;i<index;i++){
-            t[i].setBadgeMainText(currentFilters.get(i));
-            t[i].setVisibility(View.VISIBLE);
-        }
 
         addQuestionTQDatabaseRef = FirebaseDatabase.getInstance().getReference("tag_questions");
         addQuestionQDatabaseRef = FirebaseDatabase.getInstance().getReference("questions");
@@ -168,9 +143,16 @@ public class addQuestion extends Activity {
     }
 
     public void initRecyclerView(){
+        System.out.println("mamma kop " + title.getText().toString().trim());
+
         RecyclerView recyclerView = findViewById(R.id.add_question_recycler_view);
+        RecyclerView horRecyclerView = findViewById(R.id.add_hor_tag_recycler_view);
         tagListREcyclerViewAdapterV2 adapter = new tagListREcyclerViewAdapterV2(currentFilters,tagNames,title.getText().toString().trim(),description.getText().toString().trim(),this);
+        horTagRecyclerViewAdapterV2 adapterHT = new horTagRecyclerViewAdapterV2(currentFilters,title.getText().toString().trim(),description.getText().toString().trim(),this);
         recyclerView.setAdapter(adapter);
+        horRecyclerView.setAdapter(adapterHT);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        horRecyclerView.setLayoutManager(layoutManager);
     }
 }

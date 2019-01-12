@@ -40,9 +40,7 @@ public class showQAList extends Activity {
 
     ArrayList<String> userFiltered = new ArrayList<>();
 
-    //ArrayList<BadgeView> t = new ArrayList<>();
-
-    BadgeView[] t = new BadgeView[5];
+    //BadgeView[] t = new BadgeView[5];
     BadgeView addButton;
 
     String filter;
@@ -54,34 +52,7 @@ public class showQAList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_qalist);
 
-        filter = getIntent().getStringExtra("tagFilter");
-
-        t[0] = findViewById(R.id.list_question_tag1);
-        t[0].setVisibility(View.GONE);
-        t[1] = findViewById(R.id.list_question_tag2);
-        t[1].setVisibility(View.GONE);
-        t[2] = findViewById(R.id.list_question_tag3);
-        t[2].setVisibility(View.GONE);
-        t[3] = findViewById(R.id.list_question_tag4);
-        t[3].setVisibility(View.GONE);
-        t[4] = findViewById(R.id.list_question_tag5);
-        t[4].setVisibility(View.GONE);
         addButton = findViewById(R.id.addQButton);
-
-        for(int i=0;i<5;i++){
-            final int ti=i;
-            t[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    currentFilters.remove(ti);
-
-                    Intent intent = new Intent(showQAList.this,showQAList.class);
-                    intent.putExtra("currentFilters",currentFilters);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-            });
-        }
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,10 +69,6 @@ public class showQAList extends Activity {
         if(currentFilters == null) currentFilters = new ArrayList<>();
         Collections.sort(currentFilters);
         index = currentFilters.size();
-        for(int i=0;i<index;i++){
-            t[i].setBadgeMainText(currentFilters.get(i));
-            t[i].setVisibility(View.VISIBLE);
-        }
 
         userFiltered = getIntent().getStringArrayListExtra("userFiltered");
         if(userFiltered != null) userIndex =userFiltered.size();
@@ -139,12 +106,10 @@ public class showQAList extends Activity {
                             Collections.sort(questionTags);
 
                             int i=0;
-                            System.out.println("size dekhi " + currentFilters.size() + " " +questionTags.size());
                             for(String now : questionTags){
                                 if(i==index) break;
                                 if(now.equals(currentFilters.get(i))) i++;
                             }
-                            System.out.println("number " + i);
                             if(i==index){
                                 QAKeys.add(TheKey);
                                 QATitles.add(question.getTitle());
@@ -192,11 +157,16 @@ public class showQAList extends Activity {
     public void initRecyclerView(){
         RecyclerView QARecyclerView = findViewById(R.id.recyclerv_view_QA);
         RecyclerView tagRecyclerView = findViewById(R.id.recyclerv_view_tags);
+        RecyclerView horTagRecyclerView = findViewById(R.id.hor_tag_recycler_view);
         QAListRecyclerViewAdapter adapterQ = new QAListRecyclerViewAdapter(QAKeys,QATitles,QAAskers,QATimes,this);
         tagListREcyclerViewAdapter adapterT = new tagListREcyclerViewAdapter(tagkeys,currentFilters,this);
+        horTagRecyclerViewAdapter adapaterHT = new horTagRecyclerViewAdapter(currentFilters,this);
         QARecyclerView.setAdapter(adapterQ);
         tagRecyclerView.setAdapter(adapterT);
+        horTagRecyclerView.setAdapter(adapaterHT);
         QARecyclerView.setLayoutManager(new LinearLayoutManager(this));
         tagRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        horTagRecyclerView.setLayoutManager(layoutManager);
     }
 }
