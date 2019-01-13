@@ -23,7 +23,6 @@ import java.util.ArrayList;
 
 public class showSingleQuestion extends Activity {
 
-    BadgeView[] t = new BadgeView[5];
     TextView title,description;
     EditText commentBox;
     Button doneComment;
@@ -36,22 +35,12 @@ public class showSingleQuestion extends Activity {
     String key,currentUser;
     ArrayList<String> commentUsers = new ArrayList<>();
     ArrayList<String> commentDescriptions = new ArrayList<>();
+    ArrayList<String> currentFilters = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_single_question);
-
-        t[0] = findViewById(R.id.single_question_tag1);
-        t[0].setVisibility(View.GONE);
-        t[1] = findViewById(R.id.single_question_tag2);
-        t[1].setVisibility(View.GONE);
-        t[2] = findViewById(R.id.single_question_tag3);
-        t[2].setVisibility(View.GONE);
-        t[3] = findViewById(R.id.single_question_tag4);
-        t[3].setVisibility(View.GONE);
-        t[4] = findViewById(R.id.single_question_tag5);
-        t[4].setVisibility(View.GONE);
 
         title = findViewById(R.id.single_question_title);
         description = findViewById(R.id.single_question_description);
@@ -92,10 +81,7 @@ public class showSingleQuestion extends Activity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int i=0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    t[i].setBadgeMainText(ds.getValue(String.class));
-                    t[i].setVisibility(View.VISIBLE);
-
-                    i++;
+                    currentFilters.add(ds.getValue(String.class));
                 }
             }
 
@@ -132,8 +118,13 @@ public class showSingleQuestion extends Activity {
 
     public void initRecyclerVIew(){
         RecyclerView recyclerView = findViewById(R.id.recycler_view_comments);
+        RecyclerView horRecyclerView = findViewById(R.id.hor_tag_recycler_view_single);
         commentRecyclerViewAdapter adapter = new commentRecyclerViewAdapter(commentUsers,commentDescriptions,this);
+        horTagSingleRecyclerViewAdapter adapterHTS = new horTagSingleRecyclerViewAdapter(currentFilters,this);
         recyclerView.setAdapter(adapter);
+        horRecyclerView.setAdapter(adapterHTS);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        horRecyclerView.setLayoutManager(layoutManager);
     }
 }

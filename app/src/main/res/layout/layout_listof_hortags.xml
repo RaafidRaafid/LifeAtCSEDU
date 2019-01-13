@@ -2,18 +2,23 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="40dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/resource_element_layout_hor_tag"
     android:orientation="vertical"
     android:layout_margin="4dp">
 
     <com.apg.mobile.roundtextview.BadgeView
+        android:id="@+id/hor_tag_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        app:mainAllCorner="30dp"
+        app:mainBgColor="#696969"
         app:mainText="abc"
-        app:subText="x"
-        android:id="@+id/hor_tag_name">
+        app:mainTextSize="5dp"
+        app:subAllCorner="30dp"
+
+        app:subText=" X ">
 
     </com.apg.mobile.roundtextview.BadgeView>
 
