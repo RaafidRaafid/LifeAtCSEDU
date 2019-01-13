@@ -13,12 +13,12 @@ import java.util.ArrayList;
 
 public class commentRecyclerViewAdapter extends RecyclerView.Adapter<commentRecyclerViewAdapter.ViewHolder>{
 
-    ArrayList<String> commentUsers = new ArrayList<>();
+    ArrayList<String> commentUserName = new ArrayList<>();
     ArrayList<String> commentDescriptions = new ArrayList<>();
     Context context;
 
     public commentRecyclerViewAdapter(ArrayList<String> commentUsers, ArrayList<String> commentDescriptions, Context context) {
-        this.commentUsers = commentUsers;
+        this.commentUserName = commentUsers;
         this.commentDescriptions = commentDescriptions;
         this.context = context;
     }
@@ -33,7 +33,9 @@ public class commentRecyclerViewAdapter extends RecyclerView.Adapter<commentRecy
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.cuser.setText(commentUsers.get(i));
+        System.out.println(commentUserName.get(i) + " " + commentDescriptions.get(i));
+
+        viewHolder.cuser.setText(commentUserName.get(i));
         viewHolder.cdesc.setText(commentDescriptions.get(i));
     }
 

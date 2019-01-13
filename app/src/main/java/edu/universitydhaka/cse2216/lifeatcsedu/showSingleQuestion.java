@@ -27,13 +27,15 @@ public class showSingleQuestion extends Activity {
     EditText commentBox;
     Button doneComment;
 
-    DatabaseReference singleQARef,commentsRef,questionTagRef;
+    DatabaseReference singleQARef,commentsRef,questionTagRef,userDatabase;
     FirebaseAuth userAuth;
     FirebaseUser userUser;
     String userUserEmail;
+    String name;
 
     String key,currentUser;
     ArrayList<String> commentUsers = new ArrayList<>();
+    ArrayList<String> commentUsername = new ArrayList<>();
     ArrayList<String> commentDescriptions = new ArrayList<>();
     ArrayList<String> currentFilters = new ArrayList<>();
 
@@ -54,6 +56,30 @@ public class showSingleQuestion extends Activity {
         userAuth = FirebaseAuth.getInstance();
         userUser = userAuth.getCurrentUser();
         userUserEmail = userUser.getEmail();
+        userDatabase = FirebaseDatabase.getInstance().getReference("users/" + userUserEmail.replace('.','&'));
+
+        userDatabase.child("name").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                name = dataSnapshot.getValue(String.class);
+
+                doneComment.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String temp = commentsRef.push().getKey();
+
+                        commentsRef.child(temp).setValue(new Comment(userUserEmail.replace('.','&'),name,commentBox.getText().toString().trim()));
+
+                        commentBox.setText("");
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         commentsRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,6 +90,7 @@ public class showSingleQuestion extends Activity {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     Comment comment = ds.getValue(Comment.class);
                     commentUsers.add(comment.getUser());
+                    commentUsername.add(comment.getName());
                     commentDescriptions.add(comment.getDescription());
                 }
 
@@ -104,22 +131,12 @@ public class showSingleQuestion extends Activity {
 
             }
         });
-
-        doneComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String temp = commentsRef.push().getKey();
-                commentsRef.child(temp).setValue(new Comment(userUserEmail.replace('.','&'),commentBox.getText().toString().trim()));
-
-                commentBox.setText("");
-            }
-        });
     }
 
     public void initRecyclerVIew(){
         RecyclerView recyclerView = findViewById(R.id.recycler_view_comments);
         RecyclerView horRecyclerView = findViewById(R.id.hor_tag_recycler_view_single);
-        commentRecyclerViewAdapter adapter = new commentRecyclerViewAdapter(commentUsers,commentDescriptions,this);
+        commentRecyclerViewAdapter adapter = new commentRecyclerViewAdapter(commentUsername,commentDescriptions,this);
         horTagSingleRecyclerViewAdapter adapterHTS = new horTagSingleRecyclerViewAdapter(currentFilters,this);
         recyclerView.setAdapter(adapter);
         horRecyclerView.setAdapter(adapterHTS);
