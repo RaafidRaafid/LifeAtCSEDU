@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newback"
     tools:context=".noticeShowPage"
     android:orientation="vertical">
 
@@ -17,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textColor="#808080"
             android:textSize="24sp"
             android:text="Notice List" />
 

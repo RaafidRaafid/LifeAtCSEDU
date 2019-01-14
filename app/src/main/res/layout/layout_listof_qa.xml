@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="280dp"
     android:layout_height="100dp"
-    android:background="@drawable/newwhite"
+    android:background="@drawable/layoutback"
     android:layout_marginBottom="5dp"
     android:layout_marginTop="0dp"
     android:padding="15dp"
@@ -20,7 +20,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="abc"
-        android:textColor="#000"
+        android:textStyle="bold"
+        android:textColor="@drawable/front_but_text"
         android:textSize="15dp" />
 
     <TextView
@@ -32,7 +33,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="9dp"
         android:text="no no asker"
-        android:textColor="#000"
+        android:textColor="@drawable/front_but_text"
         android:textSize="10sp" />
 
     <TextView
@@ -44,7 +45,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="9dp"
         android:text="no time"
-        android:textColor="#000"
+        android:textColor="@drawable/front_but_text"
         android:textSize="10sp" />
 
 

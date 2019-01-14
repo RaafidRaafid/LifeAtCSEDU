@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="@drawable/user_list_back"
+    android:background="@drawable/layoutback"
     android:layout_marginTop="0dp"
+    android:layout_marginBottom="15dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
     android:padding="15dp"
     android:id="@+id/notice_element_layout"
     >
@@ -19,6 +22,7 @@
         android:layout_marginTop="4dp"
         android:textAllCaps="true"
         android:text="abc"
+        android:textStyle="bold"
         android:textColor="@drawable/user_list_text"
         android:textSize="15dp" />
 

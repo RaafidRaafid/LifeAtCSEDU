@@ -81,6 +81,8 @@
     <Button
         android:id="@+id/logout_button"
         android:layout_width="match_parent"
+        android:background="@drawable/front_but_back"
+        android:textColor="@drawable/front_but_text"
         android:layout_height="50dp"
         android:layout_weight="0"
         android:text="Logout" />

@@ -3,7 +3,10 @@
 android:layout_width="match_parent"
 android:layout_height="120dp"
 android:padding="15dp"
-    android:background="@drawable/user_list_back"
+    android:layout_marginBottom="15dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/layoutback"
 android:id="@+id/user_element_layout">
 
 <de.hdodenhof.circleimageview.CircleImageView
