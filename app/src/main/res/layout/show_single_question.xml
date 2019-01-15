@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/newback"
     android:layout_height="match_parent"
     tools:context=".showSingleQuestion">
 
@@ -24,6 +25,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:text="Title : "
+                android:textColor="#808080"
+                android:textStyle="bold"
                 android:layout_margin="10dp"/>
 
             <TextView
@@ -32,6 +35,7 @@
                 android:id="@+id/single_question_title"
                 android:textSize="20dp"
                 android:text="abc"
+                android:textColor="#808080"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"/>
@@ -64,21 +68,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
+            android:background="@drawable/white"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description :"
-                android:textSize="20dp"
-                android:layout_margin="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:layout_margin="10dp"
+                android:textColor="#000"
                 android:text="abc"
                 android:id="@+id/single_question_description"/>
 
@@ -92,12 +92,18 @@
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:hint="Write Comment..."
+                android:textColorHint="#808080"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_vertical"
                 android:id="@+id/commentBox"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Done"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/holo_green_light"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:id="@+id/commentBoxDone"/>
 
         </LinearLayout>
@@ -107,6 +113,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Comments: "
+            android:textColor="#808080"
             android:layout_marginLeft="10dp"/>
 
         <android.support.v7.widget.RecyclerView

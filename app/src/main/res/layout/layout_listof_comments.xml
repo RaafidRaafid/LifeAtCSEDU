@@ -2,7 +2,10 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/newwhite"
     android:id="@+id/resource_element_layout_comment"
     android:orientation="vertical">
 
@@ -10,14 +13,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name"
-        android:layout_margin="5dp"
+        android:textColor="@color/purple6"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginStart="5dp"
         android:id="@+id/comment_user"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="comment"
-        android:layout_margin="5dp"
+        android:textColor="#000"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
         android:id="@+id/comment_description"/>
 
 

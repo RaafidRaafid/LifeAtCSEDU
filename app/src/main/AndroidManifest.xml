@@ -23,13 +23,7 @@
         <activity android:name=".registerUser" />
         <activity android:name=".FrontPage" />
         <activity android:name=".resetPasswordPage" />
-        <activity android:name=".showUserList">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".showUserList"/>
         <activity android:name=".showSingleUser" />
         <activity android:name=".editUserPage" />
         <activity android:name=".noticeShowPage" />
@@ -48,7 +42,6 @@
         <activity android:name=".showQAList" />
         <activity android:name=".showSingleQuestion" />
         <activity android:name=".addQuestion" />
-        <activity android:name=".addPastQuestionPage" />
         <activity android:name=".PeoplePage" />
         <activity android:name=".stuffShowPage" />
         <activity android:name=".showSingleStuff" />
