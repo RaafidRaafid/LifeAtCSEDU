@@ -50,6 +50,10 @@
         <activity android:name=".showTeacherList" />
         <activity android:name=".showSingleTeacher" />
         <activity android:name=".addTeacher" />
+        <activity android:name=".showBatchList" />
+        <activity android:name=".addStudent" />
+        <activity android:name=".showStudentList" />
+        <activity android:name=".showSingleStudent"></activity>
     </application>
 
 </manifest>
