@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/newwhite"
+    android:layout_marginTop="0dp"
+    android:padding="15dp"
+    android:id="@+id/batch_element_layout"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/batch_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:textAllCaps="true"
+        android:text="abc"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+</RelativeLayout>
