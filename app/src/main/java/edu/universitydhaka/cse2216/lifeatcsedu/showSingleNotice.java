@@ -42,7 +42,10 @@ public class showSingleNotice extends Activity {
                 notice = dataSnapshot.getValue(Notice.class);
                 noticeTitle.setText(notice.getTitle());
                 noticeDesc.setText(notice.getDescription());
-                noticeTime.setText(notice.getTime());
+                noticeTime.setText(notice.getTime().substring(0,10).replace('-','/')
+                        + " at "
+                        +notice.getTime().substring(11).replace('-',':'));
+
 
 
             }

@@ -11,6 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class QAListRecyclerViewAdapter extends RecyclerView.Adapter<QAListRecyclerViewAdapter.ViewHolder> {
@@ -19,6 +25,7 @@ public class QAListRecyclerViewAdapter extends RecyclerView.Adapter<QAListRecycl
     ArrayList<String> QATitles = new ArrayList<>();
     ArrayList<String> QAAskers = new ArrayList<>();
     ArrayList<String> QATimes = new ArrayList<>();
+    DatabaseReference userDatabase;
     Context context;
 
     public QAListRecyclerViewAdapter(ArrayList<String> QAKeys, ArrayList<String> QATitles, ArrayList<String> QAAskers, ArrayList<String> QATimes, Context context) {
@@ -27,6 +34,7 @@ public class QAListRecyclerViewAdapter extends RecyclerView.Adapter<QAListRecycl
         this.QAAskers = QAAskers;
         this.QATimes = QATimes;
         this.context = context;
+        userDatabase = FirebaseDatabase.getInstance().getReference("users");
     }
 
     @NonNull
@@ -38,11 +46,24 @@ public class QAListRecyclerViewAdapter extends RecyclerView.Adapter<QAListRecycl
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder,final int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+
+        userDatabase.child(QAAskers.get(i)).child("name").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                viewHolder.QAAsker.setText(dataSnapshot.getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         viewHolder.QATitle.setText(QATitles.get(i));
-        viewHolder.QAAsker.setText(QAAskers.get(i));
-        viewHolder.QATime.setText(QATimes.get(i));
+        viewHolder.QATime.setText(QATimes.get(i).substring(0,10).replace('-','/')
+                + " at "
+                + QATimes.get(i).substring(11).replace('-',':'));
 
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override

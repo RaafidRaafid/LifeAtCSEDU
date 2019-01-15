@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.apg.mobile.roundtextview.BadgeView;
 import com.google.firebase.database.DataSnapshot;
@@ -76,6 +77,7 @@ public class showQAList extends Activity {
         QADatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 QATitles.clear();
                 QATimes.clear();
                 QAAskers.clear();
@@ -111,9 +113,9 @@ public class showQAList extends Activity {
                                 if(now.equals(currentFilters.get(i))) i++;
                             }
                             if(i==index){
+                                QAAskers.add(question.getAsker());
                                 QAKeys.add(TheKey);
                                 QATitles.add(question.getTitle());
-                                QAAskers.add(question.getAsker());
                                 QATimes.add(question.getTime());
                             }
                         }
@@ -155,6 +157,8 @@ public class showQAList extends Activity {
     }
 
     public void initRecyclerView(){
+        System.out.println(QAAskers.size() + " " + QATitles.size());
+
         RecyclerView QARecyclerView = findViewById(R.id.recyclerv_view_QA);
         RecyclerView tagRecyclerView = findViewById(R.id.recyclerv_view_tags);
         RecyclerView horTagRecyclerView = findViewById(R.id.hor_tag_recycler_view);

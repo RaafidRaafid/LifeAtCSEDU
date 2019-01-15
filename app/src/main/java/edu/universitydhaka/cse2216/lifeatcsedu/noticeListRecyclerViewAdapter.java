@@ -50,7 +50,10 @@ public class noticeListRecyclerViewAdapter extends RecyclerView.Adapter<noticeLi
         Log.d(TAG, "onBindViewHolder: " + i);
 
         viewHolder.noticeListTitle.setText(mNoticeTitles.get(i));
-        viewHolder.noticeListTime.setText(mNoticeTime.get(i));
+
+        viewHolder.noticeListTime.setText(mNoticeTime.get(i).substring(0,10).replace('-','/')
+                                            + " at "
+                                            + mNoticeTime.get(i).substring(11).replace('-',':'));
 
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
