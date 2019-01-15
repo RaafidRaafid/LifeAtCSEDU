@@ -16,9 +16,14 @@
         style="@android:style/Widget.ImageButton"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="2.5dp"
         android:layout_weight="1"
-        android:src="@drawable/newsfeedlogo"
         android:background="@drawable/front_but_back"
+        android:scaleType="fitCenter"
+        android:src="@drawable/newsfeedlogo"
         android:visibility="visible" />
 
     <LinearLayout
@@ -32,9 +37,14 @@
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="2.5dp"
+            android:layout_marginBottom="2.5dp"
             android:layout_weight="1"
-            android:src="@drawable/studylogo2"
             android:background="@drawable/front_but_back"
+            android:scaleType="fitCenter"
+            android:src="@drawable/studylogo2"
             android:tint="@drawable/front_but_text" />
 
         <ImageButton
@@ -42,9 +52,14 @@
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="2.5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2.5dp"
             android:layout_weight="1"
-            android:src="@drawable/pnslogo"
             android:background="@drawable/front_but_back"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pnslogo"
             android:tint="@drawable/front_but_text" />
 
 
@@ -63,22 +78,36 @@
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="2.5dp"
+            android:layout_marginBottom="2.5dp"
             android:layout_weight="1"
-            android:src="@drawable/userlogo"
             android:background="@drawable/front_but_back"
+            android:scaleType="fitCenter"
+            android:src="@drawable/userlogo"
             android:tint="@drawable/front_but_text" />
 
         <ImageButton
             android:id="@+id/toQA"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="2.5dp"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2.5dp"
             android:layout_weight="1"
-            android:src="@drawable/qna2"
             android:background="@drawable/front_but_back"
+            android:scaleType="fitCenter"
+            android:src="@drawable/qna2"
             android:tint="@drawable/front_but_text" />
     </LinearLayout>
 
     <Button
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="2.5dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/logout_button"
         android:layout_width="match_parent"
         android:background="@drawable/front_but_back"

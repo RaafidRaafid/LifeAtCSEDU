@@ -3,6 +3,6 @@
     <item android:state_pressed="true"
         android:drawable="@drawable/newback" /> <!-- pressed -->
     <item android:state_focused="true"
-        android:drawable="@drawable/newwhite" /> <!-- focused -->
-    <item android:drawable="@drawable/newwhite" /> <!-- default -->
+        android:drawable="@drawable/white" /> <!-- focused -->
+    <item android:drawable="@drawable/white" /> <!-- default -->
 </selector>
