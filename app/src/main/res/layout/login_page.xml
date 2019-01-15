@@ -64,22 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="191dp" />
 
-    <Button
-        android:id="@+id/registerButton"
-        style="@android:style/Widget.Holo.Button.Borderless"
-        android:layout_width="244dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvForgotPassword"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="40dp"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
-        android:text="New user? Sign up!"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -97,7 +82,9 @@
         android:layout_height="22dp"
         android:layout_below="@+id/loginButton"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:layout_marginTop="20dp"
+        android:text="Forgot Password!"
         android:textColor="#808080"
         android:visibility="visible" />
 
@@ -109,4 +96,15 @@
         android:layout_alignTop="@+id/loginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="472dp"
+        android:textColor="#ffffff"
+        android:text="New user? Sign up!" />
 </RelativeLayout>
