@@ -69,12 +69,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@drawable/white"
+                android:layout_height="wrap_content"
+                android:background="@drawable/description_back"
                 android:layout_margin="5dp"
                 android:orientation="horizontal">
 
@@ -91,9 +91,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textSize="20dp"
-
-                        android:textColor="#000"
+                        android:textColor="#ffffff"
                         android:text="abc"
+
                         android:id="@+id/single_question_description"/>
                 </ScrollView>
 
