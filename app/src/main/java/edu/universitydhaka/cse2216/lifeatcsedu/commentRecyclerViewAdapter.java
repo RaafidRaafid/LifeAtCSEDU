@@ -21,6 +21,8 @@ public class commentRecyclerViewAdapter extends RecyclerView.Adapter<commentRecy
         this.commentUserName = commentUsers;
         this.commentDescriptions = commentDescriptions;
         this.context = context;
+
+
     }
 
     @NonNull
@@ -33,7 +35,7 @@ public class commentRecyclerViewAdapter extends RecyclerView.Adapter<commentRecy
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        System.out.println(commentUserName.get(i) + " " + commentDescriptions.get(i));
+        //System.out.println(commentUserName.get(i) + " " + commentDescriptions.get(i));
 
         viewHolder.cuser.setText(commentUserName.get(i));
         viewHolder.cdesc.setText(commentDescriptions.get(i));
