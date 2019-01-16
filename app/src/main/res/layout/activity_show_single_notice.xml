@@ -77,5 +77,27 @@
         android:textStyle="bold"
         android:textSize="14dp" />
 
+    <Button
+        android:id="@+id/Edit_notice_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="0dp"
+        android:text="Edit notice"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/Delete_notice_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="286dp"
+        android:layout_marginEnd="0dp"
+        android:text="Delete notice"
+        android:visibility="invisible" />
+
 
 </RelativeLayout>

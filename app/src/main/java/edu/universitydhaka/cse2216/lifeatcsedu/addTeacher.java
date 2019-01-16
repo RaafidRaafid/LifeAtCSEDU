@@ -30,10 +30,10 @@ public class addTeacher extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addteacher);
 
-        mTeacherName =(EditText) findViewById(R.id.editTeacherName);
-        mTeacherPhone = (EditText) findViewById(R.id.editTeacherPhone);
-        mTeacherEmail = (EditText) findViewById(R.id.editTeacherEmail);
-        mTeacherResearchArea = (EditText) findViewById(R.id.editTeacherResearchArea);
+        mTeacherName =(EditText) findViewById(R.id.addTeacherName);
+        mTeacherPhone = (EditText) findViewById(R.id.addTeacherPhone);
+        mTeacherEmail = (EditText) findViewById(R.id.addTeacherEmail);
+        mTeacherResearchArea = (EditText) findViewById(R.id.addTeacherResearchArea);
         mSubmitButton=(Button) findViewById(R.id.submitButton3);
         mProgress= new ProgressDialog(this);
         teacherType = getIntent().getStringExtra("teacherType");

@@ -13,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".editTeacher"></activity>
+        <activity android:name=".editStaff" />
+        <activity android:name=".EditStudent" />
+        <activity android:name=".editNotice" />
         <activity android:name=".LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +27,7 @@
         <activity android:name=".registerUser" />
         <activity android:name=".FrontPage" />
         <activity android:name=".resetPasswordPage" />
-        <activity android:name=".showUserList"/>
+        <activity android:name=".showUserList" />
         <activity android:name=".showSingleUser" />
         <activity android:name=".editUserPage" />
         <activity android:name=".noticeShowPage" />
@@ -53,7 +57,7 @@
         <activity android:name=".showBatchList" />
         <activity android:name=".addStudent" />
         <activity android:name=".showStudentList" />
-        <activity android:name=".showSingleStudent"></activity>
+        <activity android:name=".showSingleStudent" />
     </application>
 
 </manifest>

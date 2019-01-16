@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/editStudentName"
+        android:id="@+id/addStudentName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editStudentBatch"
+        android:id="@+id/addStudentBatch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,10 +26,10 @@
         android:hint="Batch"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editStudentName" />
+        app:layout_constraintTop_toBottomOf="@+id/addStudentName" />
 
     <EditText
-        android:id="@+id/editStudentRoll"
+        android:id="@+id/addStudentRoll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,11 +37,11 @@
         android:hint="Roll"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editStudentBatch" />
+        app:layout_constraintTop_toBottomOf="@+id/addStudentBatch" />
 
 
     <EditText
-        android:id="@+id/editStudentPhone"
+        android:id="@+id/addStudentPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -49,11 +49,11 @@
         android:hint="Phone"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editStudentRoll" />
+        app:layout_constraintTop_toBottomOf="@+id/addStudentRoll" />
 
 
     <EditText
-        android:id="@+id/editStudentEmail"
+        android:id="@+id/addStudentEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -61,10 +61,10 @@
         android:hint="Email"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editStudentPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/addStudentPhone" />
 
     <EditText
-        android:id="@+id/editStudentRegistrationNo"
+        android:id="@+id/addStudentRegistrationNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -72,7 +72,7 @@
         android:hint="Registration No :"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editStudentRegistrationNo" />
+        app:layout_constraintTop_toBottomOf="@+id/addStudentRegistrationNo" />
 
 
 

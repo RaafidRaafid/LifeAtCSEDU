@@ -4,12 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addTeacher"
+    tools:context=".editStaff"
     tools:layout_editor_absoluteY="73dp"
+    android:background="@drawable/white"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="20dp"
+        android:text="Edit stuff"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
     <EditText
-        android:id="@+id/addTeacherName"
+        android:id="@+id/editStaffName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -20,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/addTeacherPhone"
+        android:id="@+id/editStaffPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -28,11 +39,20 @@
         android:hint="Phone"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTeacherName" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editStaffName" />
+    <EditText
+        android:id="@+id/editStaffWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="20dp"
+        android:hint="Work"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editStaffPhone" />
 
     <EditText
-        android:id="@+id/addTeacherEmail"
+        android:id="@+id/editStaffEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -40,25 +60,15 @@
         android:hint="Email"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTeacherPhone" />
-
-    <EditText
-        android:id="@+id/addTeacherResearchArea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:padding="20dp"
-        android:hint="Research Area"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addTeacherEmail" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editStaffWork" />
 
 
     <Button
-        android:id="@+id/submitButton3"
-        android:layout_width="380dp"
+        android:id="@+id/editStaffSubmitButton"
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:textColor="@drawable/sem_but_text"
         android:padding="15dp"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"

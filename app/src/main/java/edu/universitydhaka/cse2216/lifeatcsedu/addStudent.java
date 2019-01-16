@@ -30,12 +30,12 @@ public class addStudent extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
-        mStudentName =(EditText) findViewById(R.id.editStudentName);
-        mStudentBatch = (EditText) findViewById(R.id.editStudentBatch);
-        mStudentRoll = (EditText) findViewById(R.id.editStudentRoll);
-        mStudentPhone = (EditText) findViewById(R.id.editStudentPhone);
-        mStudentEmail = (EditText) findViewById(R.id.editStudentEmail);
-        mStudentRegistrationNo = (EditText) findViewById(R.id.editStudentRegistrationNo);
+        mStudentName =(EditText) findViewById(R.id.addStudentName);
+        mStudentBatch = (EditText) findViewById(R.id.addStudentBatch);
+        mStudentRoll = (EditText) findViewById(R.id.addStudentRoll);
+        mStudentPhone = (EditText) findViewById(R.id.addStudentPhone);
+        mStudentEmail = (EditText) findViewById(R.id.addStudentEmail);
+        mStudentRegistrationNo = (EditText) findViewById(R.id.addStudentRegistrationNo);
         mSubmitButton=(Button) findViewById(R.id.submitButton4);
         mProgress= new ProgressDialog(this);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("student");

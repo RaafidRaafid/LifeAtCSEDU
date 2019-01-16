@@ -30,10 +30,10 @@ public class addStuff extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_stuff);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("stuff");
-        mStuffName =(EditText) findViewById(R.id.editStuffName);
-        mStuffPhone = (EditText) findViewById(R.id.editStuffPhone);
-        mStuffWork = (EditText) findViewById(R.id.editStuffWork);
-        mStuffEmail = (EditText) findViewById(R.id.editStuffEmail);
+        mStuffName =(EditText) findViewById(R.id.addStuffName);
+        mStuffPhone = (EditText) findViewById(R.id.addStuffPhone);
+        mStuffWork = (EditText) findViewById(R.id.addStuffWork);
+        mStuffEmail = (EditText) findViewById(R.id.addStuffEmail);
         mSubmitButton=(Button) findViewById(R.id.submitButton2);
         mProgress= new ProgressDialog(this);
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
