@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginBottom="5dp"
-    android:layout_marginTop="5dp"
-    android:background="@drawable/newwhite"
+    android:minHeight="40dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp"
+    app:layout_constraintCircleRadius="10dp"
+    android:background="@drawable/comments_back"
     android:id="@+id/resource_element_layout_comment"
     android:orientation="vertical">
 
@@ -16,7 +18,7 @@
         android:textColor="@color/purple6"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="15dp"
         android:id="@+id/comment_user"/>
 
     <TextView
@@ -24,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="comment"
         android:textColor="#000"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="2dp"
         android:id="@+id/comment_description"/>
 
