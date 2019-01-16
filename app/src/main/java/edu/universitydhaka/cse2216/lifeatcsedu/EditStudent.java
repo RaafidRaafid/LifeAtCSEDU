@@ -23,7 +23,7 @@ public class EditStudent extends Activity {
 
     private EditText editStudentName;
     private EditText editStudentRoll;
-    private EditText editStudentBatch;
+    //private EditText editStudentBatch;
     private EditText editStudentPhone;
     private EditText editStudentEmail;
     private EditText editStudentRegistrationNo;
@@ -44,7 +44,7 @@ public class EditStudent extends Activity {
         studentDatabaseRef = FirebaseDatabase.getInstance().getReference("student/"+ batch + "/" + key);
 
         editStudentName =(EditText) findViewById(R.id.editStudentName);
-        editStudentBatch = (EditText) findViewById(R.id.editStudentBatch);
+        //editStudentBatch = (EditText) findViewById(R.id.editStudentBatch);
         editStudentRoll = (EditText) findViewById(R.id.editStudentRoll);
         editStudentPhone = (EditText) findViewById(R.id.editStudentPhone);
         editStudentEmail = (EditText) findViewById(R.id.editStudentEmail);
@@ -58,7 +58,7 @@ public class EditStudent extends Activity {
                 student = dataSnapshot.getValue(Student.class);
 
                 editStudentName.setText(student.getName());
-                editStudentBatch.setText(student.getBatch());
+                //editStudentBatch.setText(student.getBatch());
                 editStudentRoll.setText(student.getRoll());
                 editStudentEmail.setText(student.getEmail());
                 editStudentPhone.setText(student.getPhone());
@@ -83,7 +83,7 @@ public class EditStudent extends Activity {
         Student changedStudent = student;
 
         changedStudent.setName(editStudentName.getText().toString().trim());
-        changedStudent.setBatch(editStudentBatch.getText().toString().trim());
+        //changedStudent.setBatch(editStudentBatch.getText().toString().trim());
         changedStudent.setRoll(editStudentRoll.getText().toString().trim());
         changedStudent.setEmail(editStudentEmail.getText().toString().trim());
         changedStudent.setPhone(editStudentPhone.getText().toString().trim());
