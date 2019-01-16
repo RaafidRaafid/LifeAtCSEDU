@@ -85,6 +85,7 @@ public class showSingleQuestion extends Activity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 commentUsers.clear();
+                commentUsername.clear();
                 commentDescriptions.clear();
 
                 for(DataSnapshot ds : dataSnapshot.getChildren()){

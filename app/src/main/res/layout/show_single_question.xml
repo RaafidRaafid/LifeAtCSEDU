@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:text="Title : "
-                android:textColor="#808080"
+                android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_margin="10dp"/>
 
@@ -53,7 +53,7 @@
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:text="Selected Tags: "
-                android:textColor="#808080"
+                android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
 
@@ -68,19 +68,39 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/white"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:background="#000">
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:layout_margin="10dp"
-                android:textColor="#000"
-                android:text="abc"
-                android:id="@+id/single_question_description"/>
+                android:layout_height="180dp"
+                android:background="@drawable/white"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+
+                <ScrollView
+                    android:id="@+id/SCROLLER_ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:layout_margin="10dp"
+                    android:fillViewport="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp"
+
+                        android:textColor="#000"
+                        android:text="abc"
+                        android:id="@+id/single_question_description"/>
+                </ScrollView>
+
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -113,13 +133,14 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Comments: "
-            android:textColor="#808080"
-            android:layout_marginLeft="10dp"/>
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="2dp"/>
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="0dp"
             android:id="@+id/recycler_view_comments">
 
         </android.support.v7.widget.RecyclerView>
