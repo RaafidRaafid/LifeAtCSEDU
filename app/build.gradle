@@ -40,6 +40,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     implementation 'com.github.apg-mobile:android-round-textview:v1.0.0'
+    //implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-messaging:17.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

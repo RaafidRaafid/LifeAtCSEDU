@@ -14,6 +14,8 @@
         tools:context=".showSingleQuestion"
         android:orientation="vertical">
 
+
+
         <LinearLayout
 
             android:layout_width="match_parent"
@@ -120,27 +122,36 @@
 
 
         </LinearLayout>
-    <Button
-        android:id="@+id/Edit_notice_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="226dp"
-        android:layout_marginEnd="0dp"
-        android:text="Edit notice"
-        android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/Delete_notice_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="286dp"
-        android:layout_marginEnd="0dp"
-        android:text="Delete notice"
-        android:visibility="invisible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <Button
+
+                android:id="@+id/Edit_notice_button"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@android:color/holo_green_light"
+                android:text="Edit notice"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/Delete_notice_button"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="120dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@android:color/holo_green_light"
+                android:textAlignment="center"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="Delete notice"
+                android:visibility="invisible" />
+        </LinearLayout>
+
 
 
     </LinearLayout>

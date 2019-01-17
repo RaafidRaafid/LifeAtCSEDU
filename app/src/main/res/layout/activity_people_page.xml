@@ -12,6 +12,7 @@
 
 
     <ImageButton
+        android:layout_margin="5dp"
         android:id="@+id/toStudent"
         style="@android:style/Widget.ImageButton"
         android:layout_width="match_parent"
@@ -29,6 +30,8 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:id="@+id/toTeacher"
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
@@ -48,6 +51,7 @@
 
         <ImageButton
             android:id="@+id/toStaff"
+            android:layout_margin="5dp"
             style="@android:style/Widget.ImageButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
