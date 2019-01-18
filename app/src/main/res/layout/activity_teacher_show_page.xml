@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherShowPage"
+    tools:context=".teacherShowPage"
+    android:background="@drawable/newback"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +19,9 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textSize="24sp"
-            tools:text="Teacher List" />
+            android:text="Teacher List"
+            android:textColor="#808080"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/AddTeacher"
@@ -43,8 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="-19dp">
+            android:layout_marginStart="0dp">
 
         </android.support.v7.widget.RecyclerView>
 

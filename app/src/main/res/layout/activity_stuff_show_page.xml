@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".stuffShowPage"
+    android:background="@drawable/newback"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +19,9 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:textSize="24sp"
-            android:text="Stuff List" />
+            android:text="Staff List"
+            android:textColor="#808080"
+            android:textStyle="bold"/>
 
         <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/AddStaff"
@@ -47,8 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="-19dp">
+            android:layout_marginStart="0dp">
 
         </android.support.v7.widget.RecyclerView>
 

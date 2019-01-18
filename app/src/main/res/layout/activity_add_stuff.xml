@@ -64,13 +64,12 @@
 
     <Button
         android:id="@+id/submitButton2"
-        android:layout_width="384dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:background="@android:color/holo_green_light"
-        android:textColor="@drawable/sem_but_text"
-        android:padding="15dp"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="2dp" />
+        android:text="submit" />
 
 </LinearLayout>

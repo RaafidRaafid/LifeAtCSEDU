@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".showTeacherType"
-    android:background="@drawable/white"
     android:orientation="vertical">
 
 
     <LinearLayout
+        android:background="@drawable/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -45,11 +45,10 @@
             android:id="@+id/Professor">
 
             <com.apg.mobile.roundtextview.RoundTextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="15dp"
-                android:paddingLeft="70dp"
-                android:paddingRight="70dp"
+                android:gravity="center"
                 android:paddingTop="15dp"
                 android:text="Professor"
                 android:textSize="20dp"
@@ -68,11 +67,10 @@
 
 
             <com.apg.mobile.roundtextview.RoundTextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="15dp"
-                android:paddingLeft="70dp"
-                android:paddingRight="70dp"
+                android:gravity="center"
                 android:paddingTop="15dp"
                 android:text="Assistant Professor"
                 android:textSize="20dp"
@@ -91,11 +89,10 @@
             >
 
             <com.apg.mobile.roundtextview.RoundTextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="15dp"
-                android:paddingLeft="70dp"
-                android:paddingRight="70dp"
+                android:gravity="center"
                 android:paddingTop="15dp"
                 android:text="Associate Professor"
                 android:textSize="20dp"
@@ -113,11 +110,10 @@
             android:id="@+id/Lecturer">
 
             <com.apg.mobile.roundtextview.RoundTextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="15dp"
-                android:paddingLeft="70dp"
-                android:paddingRight="70dp"
+                android:gravity="center"
                 android:paddingTop="15dp"
                 android:text="Lecturer"
                 android:textSize="20dp"
