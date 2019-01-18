@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newback"
     tools:context=".showStudentList"
     android:orientation="vertical">
 
@@ -18,7 +19,9 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:textSize="24sp"
-            tools:text="Student List" />
+            android:text="Student List"
+            android:textStyle="bold"
+            android:textColor="#808080"/>
 
 
     </LinearLayout>

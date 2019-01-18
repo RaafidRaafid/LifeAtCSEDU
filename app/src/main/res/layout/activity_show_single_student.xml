@@ -1,177 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:layout_width="fill_parent"
-    android:background="@drawable/white"
+    android:background="@drawable/newback"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="30dp"
     android:layout_height="fill_parent"
-    tools:context=".showSingleStudent">
+    tools:context=".showSingleStudent"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/studentName"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentName_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="abc"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studentBatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batch :"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentBatch_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="abc"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studentRoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll :"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentRoll_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="1dp"
+            android:text="abc"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studentPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number :"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentPhone_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="def"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studentEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentEmail_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/studentEmail"
+            android:layout_marginStart="30dp"
+            android:text="none"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studentRegistration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration No:"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentRegistration_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="none"
+            android:textColor="#fff"
+            android:textSize="19dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="485dp"
-        android:textStyle="bold"
-        android:text="Name :"
-        android:textSize="19dp" />
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/studentName_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/studentName"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="1dp"
-        android:text="abc"
-        android:textSize="19dp" />
+        <Button
+            android:id="@+id/Delete_student_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@android:color/holo_green_light"
+            android:visibility="visible" />
 
-
-    <TextView
-        android:id="@+id/studentBatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="445dp"
-        android:textStyle="bold"
-        android:text="Batch :"
-        android:textSize="19dp" />
-
-    <TextView
-        android:id="@+id/studentBatch_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/studentBatch"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="1dp"
-        android:text="abc"
-        android:textSize="19dp" />
-
-    <TextView
-        android:id="@+id/studentRoll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="405dp"
-        android:textStyle="bold"
-        android:text="Roll :"
-        android:textSize="19dp" />
-
-    <TextView
-        android:id="@+id/studentRoll_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/studentRoll"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="1dp"
-        android:text="abc"
-        android:textSize="19dp" />
-
-
-    <TextView
-        android:id="@+id/studentPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="365dp"
-        android:textStyle="bold"
-        android:text="Phone Number :"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/studentPhone_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/studentPhone"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="1dp"
-        android:text="def"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/studentEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="325dp"
-        android:text="Email :"
-        android:textStyle="bold"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/studentEmail_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/studentEmail"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="-1dp"
-        android:text="none"
-        android:textSize="14dp" />
+        <Button
+            android:id="@+id/Edit_student_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Edit"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@android:color/holo_green_light"
+            android:visibility="visible" />
+    </LinearLayout>
 
 
 
-    <TextView
-        android:id="@+id/studentRegistration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="285dp"
-        android:text="Registration No:"
-        android:textStyle="bold"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/studentRegistration_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/studentRegistration"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="-1dp"
-        android:text="none"
-        android:textSize="14dp" />
-
-    <Button
-        android:id="@+id/Delete_student_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="0dp"
-        android:text="Delete"
-        android:visibility="invisible" />
-
-    <Button
-        android:id="@+id/Edit_student_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="0dp"
-        android:text="Edit"
-        android:visibility="invisible" />
-
-
-
-</RelativeLayout>
+</LinearLayout>

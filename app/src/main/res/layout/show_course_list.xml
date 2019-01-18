@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".noticeShowPage"
+    android:background="@drawable/newback"
     android:orientation="vertical">
 
     <LinearLayout
@@ -20,7 +21,8 @@
             android:layout_marginTop="8dp"
             android:padding="10dp"
             android:textSize="24sp"
-            tools:text="Course List" />
+            android:textColor="#808080"
+            android:text="Course List" />
 
         <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/AddCourse"

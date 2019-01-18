@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newback"
     tools:context=".noticeShowPage"
     android:orientation="vertical">
 
@@ -17,7 +18,9 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:textSize="24sp"
-            tools:text="Books List" />
+            android:text="Books List"
+            android:textColor="#808080"
+            android:textStyle="bold"/>
 
         <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/addBook"

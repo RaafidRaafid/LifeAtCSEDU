@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".addTeacher"
+    android:background="@drawable/white"
     tools:layout_editor_absoluteY="73dp"
     android:orientation="vertical">
 
@@ -57,11 +58,13 @@
 
     <Button
         android:id="@+id/submitButton3"
-        android:layout_width="380dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@android:color/holo_green_light"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="2dp" />
+        android:layout_marginTop="100dp"
+
+        android:text="submit" />
 
 </LinearLayout>

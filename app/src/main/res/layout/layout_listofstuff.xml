@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="@drawable/newwhite"
+    android:layout_height="60dp"
+    android:background="@drawable/layoutback"
     android:layout_marginTop="0dp"
     android:padding="15dp"
     android:id="@+id/stuff_element_layout">
@@ -18,7 +18,7 @@
         android:layout_marginTop="4dp"
         android:textAllCaps="true"
         android:text="abc"
-        android:textColor="#000"
+        android:textColor="@drawable/front_but_text"
         android:textSize="15dp" />
 
 </RelativeLayout>

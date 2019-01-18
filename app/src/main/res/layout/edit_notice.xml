@@ -30,27 +30,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editNoticeDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:padding="130dp"
-        android:hint="Notice Description"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNoticeTitle" />
+
+        <EditText
+            android:id="@+id/editNoticeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="20dp"
+            android:hint="Notice Description"
+            android:inputType="textMultiLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editNoticeTitle" />
 
 
     <Button
         android:id="@+id/editNoticeSubmitButton"
-        android:background="@android:color/holo_green_light"
-        android:layout_width="384dp"
+        android:layout_width="284dp"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:text="Submit"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_green_light"
         android:textColor="@drawable/sem_but_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="2dp" />
+        android:text="Submit"  />
 
 </LinearLayout>
