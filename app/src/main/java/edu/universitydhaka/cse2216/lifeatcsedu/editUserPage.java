@@ -157,6 +157,13 @@ public class editUserPage extends Activity {
                                 public void onSuccess(Uri uri) {
                                     dpURL = uri.toString();
                                     changedUser.setDpURL(dpURL);
+                                    editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
+                                            finish();
+                                        }
+                                    });
                                 }
                             });
 
@@ -169,18 +176,27 @@ public class editUserPage extends Activity {
                             System.out.println("Picture Hoynai");
                             Toast.makeText(editUserPage.this,"Failed",Toast.LENGTH_LONG).show();
                             doneEditButton.setVisibility(View.VISIBLE);
+                            editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
+                                    finish();
+                                }
+                            });
                         }
                     });
 
 
         }
-        editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
-            }
-        });
-        finish();
+        else{
+            editUserDatabaseRef.setValue(changedUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(editUserPage.this,"Update Done",Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            });
+        }
 
     }
 }
