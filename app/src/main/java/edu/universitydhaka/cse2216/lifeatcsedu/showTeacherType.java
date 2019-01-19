@@ -71,7 +71,7 @@ public class showTeacherType extends Activity {
         lecturer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(showTeacherType.this,showCourseList.class);
+                Intent intent = new Intent(showTeacherType.this,showTeacherList.class);
                 intent.putExtra("teacherType","lecturer");
                 intent.putExtra("current",nowUer);
                 startActivity(intent);

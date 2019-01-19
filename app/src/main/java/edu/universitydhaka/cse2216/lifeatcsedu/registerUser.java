@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.w3c.dom.Text;
 
@@ -97,7 +98,7 @@ public class registerUser extends Activity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
 
-                                User user = new User(semail, sfullname, sbatch,sroll,sphoneNumber, sfullname + "_" + sbatch, sfullname + "_" + sbatch + "_" + sroll,"https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg","false","Nothing yet.");
+                                User user = new User(semail, sfullname, sbatch,sroll,sphoneNumber, sfullname + "_" + sbatch, sfullname + "_" + sbatch + "_" + sroll,"https://i.kym-cdn.com/entries/icons/original/000/003/619/ForeverAlone.jpg","false","Nothing yet.","-1");
                                 databaseReference.child(semail.replace('.','&')).setValue(user);
                                 FirebaseUser hmmttuser = userAuthentication.getCurrentUser();
                                 hmmttuser.sendEmailVerification();

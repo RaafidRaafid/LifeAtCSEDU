@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,7 +41,7 @@ public class noticeShowPage extends Activity {
         noticePageDataBaseRef = FirebaseDatabase.getInstance().getReference("notice");
         AddPostButton=findViewById(R.id.AddPost);
         AddPostButton.setVisibility(View.GONE);
-        nowUser=getIntent().getStringExtra("current");
+        nowUser=FirebaseAuth.getInstance().getCurrentUser().getEmail();
         System.out.println("users/"+nowUser.replace('.','&'));
         userDatabase=FirebaseDatabase.getInstance().getReference("users/"+nowUser.replace('.','&'));
 
