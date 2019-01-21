@@ -38,6 +38,7 @@ public class showSingleQuestion extends Activity {
     ArrayList<String> commentUsername = new ArrayList<>();
     ArrayList<String> commentDescriptions = new ArrayList<>();
     ArrayList<String> currentFilters = new ArrayList<>();
+    ArrayList<String> commentKeys = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,12 +88,14 @@ public class showSingleQuestion extends Activity {
                 commentUsers.clear();
                 commentUsername.clear();
                 commentDescriptions.clear();
+                commentKeys.clear();
 
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     Comment comment = ds.getValue(Comment.class);
                     commentUsers.add(comment.getUser());
                     commentUsername.add(comment.getName());
                     commentDescriptions.add(comment.getDescription());
+                    commentKeys.add("question_comments/" + key+ "/" + ds.getKey());
                 }
 
                 initRecyclerVIew();
@@ -137,7 +140,7 @@ public class showSingleQuestion extends Activity {
     public void initRecyclerVIew(){
         RecyclerView recyclerView = findViewById(R.id.recycler_view_comments);
         RecyclerView horRecyclerView = findViewById(R.id.hor_tag_recycler_view_single);
-        commentRecyclerViewAdapter adapter = new commentRecyclerViewAdapter(commentUsername,commentDescriptions,this);
+        commentRecyclerViewAdapter adapter = new commentRecyclerViewAdapter(commentUsername,commentDescriptions,commentKeys,commentUsers,this);
         horTagSingleRecyclerViewAdapter adapterHTS = new horTagSingleRecyclerViewAdapter(currentFilters,this);
         recyclerView.setAdapter(adapter);
         horRecyclerView.setAdapter(adapterHTS);
