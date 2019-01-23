@@ -32,6 +32,8 @@
             android:id="@+id/past_questions_link_button"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
+            android:textColor="@drawable/sem_but_text"
             android:text="Add File" />
     </LinearLayout>
 

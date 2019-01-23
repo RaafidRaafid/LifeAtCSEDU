@@ -124,7 +124,8 @@
                 android:layout_gravity="center_vertical"
                 android:background="@android:color/holo_green_light"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:id="@+id/commentBoxDone"/>
+                android:id="@+id/commentBoxDone"
+                android:textColor="@drawable/sem_but_text"/>
 
         </LinearLayout>
 

@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="abc"
         android:textColor="@drawable/front_but_text"
+        android:layout_gravity="center"
         android:textSize="18sp" />
 
 </LinearLayout>

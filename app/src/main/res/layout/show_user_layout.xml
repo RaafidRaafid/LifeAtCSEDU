@@ -189,7 +189,7 @@
         android:background="@drawable/newback"
         android:onClick="gotoQuestions"
         android:text="Question"
-        android:textColor="#ffffff" />
+        android:textColor="@drawable/sem_but_text" />
 
 
 </RelativeLayout>

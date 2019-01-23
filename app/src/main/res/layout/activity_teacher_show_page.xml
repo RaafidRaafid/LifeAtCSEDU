@@ -17,19 +17,23 @@
             android:id="@+id/TeacherList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="12dp"
             android:textSize="24sp"
             android:text="Teacher List"
             android:textColor="#808080"
             android:textStyle="bold"/>
 
-        <Button
+        <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/AddTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Add Teacher"
-            android:textSize="24sp" />
+            android:layout_marginTop="8dp"
+            app:mainAllCorner="30dp"
+            app:mainBgColor="#bab8bc"
+            app:mainText="Add Teacher"
+            app:mainTextSize="8dp"
+            app:subAllCorner="30dp"
+            app:subText=" + "/>
 
     </LinearLayout>
 
