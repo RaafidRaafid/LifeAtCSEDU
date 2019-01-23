@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.apg.mobile.roundtextview.BadgeView;
@@ -41,10 +42,9 @@ public class showQAList extends Activity {
 
     ArrayList<String> userFiltered = new ArrayList<>();
 
-    //BadgeView[] t = new BadgeView[5];
     BadgeView addButton;
-
-    String filter;
+    EditText FilterBox;
+    Button FilterDone;
 
     int index,userIndex;
 
@@ -54,11 +54,24 @@ public class showQAList extends Activity {
         setContentView(R.layout.show_qalist);
 
         addButton = findViewById(R.id.addQButton);
+        FilterBox = findViewById(R.id.FilterBox);
+        FilterDone = findViewById(R.id.FilterDone);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(showQAList.this,addQuestion.class));
+            }
+        });
+
+        FilterDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(FilterBox.getText().toString().trim() == null || FilterBox.getText().toString().trim().equals("")) return;
+
+                Intent intent = new Intent(showQAList.this,showNameFilteredQAList.class);
+                intent.putExtra("nameFilter",FilterBox.getText().toString().trim());
+                startActivity(intent);
             }
         });
 

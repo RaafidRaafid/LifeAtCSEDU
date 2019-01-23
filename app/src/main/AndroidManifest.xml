@@ -74,7 +74,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".editComment"></activity>
+        <activity android:name=".editComment" />
+        <activity android:name=".showNameFilteredQAList"></activity>
     </application>
 
 </manifest>
