@@ -66,7 +66,7 @@ public class stuffListRecyclerViewAdapter extends RecyclerView.Adapter<stuffList
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView stuffListName;
-        RelativeLayout parentLayout;
+        LinearLayout parentLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             stuffListName = itemView.findViewById(R.id.stuff_name);

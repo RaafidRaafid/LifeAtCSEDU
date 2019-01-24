@@ -72,6 +72,7 @@ public class showQAList extends Activity {
                 Intent intent = new Intent(showQAList.this,showNameFilteredQAList.class);
                 intent.putExtra("nameFilter",FilterBox.getText().toString().trim());
                 startActivity(intent);
+                FilterDone.setText("");
             }
         });
 

@@ -1,6 +1,7 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -50,6 +51,8 @@ public class editNotice extends Activity {
                 editNoticeTitle.setText(notice.getTitle());
                 editNoticeDescription.setText(notice.getDescription());
                 editNoticeSubmitButton.setVisibility(View.VISIBLE);
+
+                editNoticeDatabaseRef.removeEventListener(this);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -77,7 +80,11 @@ public class editNotice extends Activity {
                 Toast.makeText(editNotice.this,"Update Done",Toast.LENGTH_LONG).show();
             }
         });
-        finish();
 
+        Intent intent = new Intent(this, showSingleNotice.class);
+        intent.putExtra("showKey",key);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 }

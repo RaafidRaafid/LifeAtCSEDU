@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.apg.mobile.roundtextview.BadgeView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +33,7 @@ public class showResourceList extends Activity {
     String nowUser,courseCode;
     User user;
 
-    Button addResourceButton;
+    BadgeView addResourceButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

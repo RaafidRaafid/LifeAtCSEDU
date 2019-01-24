@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.apg.mobile.roundtextview.BadgeView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +31,7 @@ public class showTeacherList extends Activity {
 
     User user;
 
-    Button AddTeacherButton;
+    BadgeView AddTeacherButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
