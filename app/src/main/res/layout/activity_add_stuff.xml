@@ -64,7 +64,7 @@
 
     <Button
         android:id="@+id/submitButton2"
-        style="@style/Widget.AppCompat.Button.Colored"
+        android:textColor="@drawable/sem_but_text"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content"

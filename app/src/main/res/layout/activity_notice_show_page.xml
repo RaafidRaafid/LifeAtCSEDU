@@ -17,18 +17,22 @@
             android:id="@+id/headerNoticeList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="12dp"
             android:textColor="#808080"
             android:textSize="24sp"
             android:text="Notice List" />
 
-        <Button
+        <com.apg.mobile.roundtextview.BadgeView
             android:id="@+id/AddPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Add Post"
-            android:textSize="24sp" />
+            android:layout_marginTop="8dp"
+            app:mainAllCorner="30dp"
+            app:mainBgColor="#bab8bc"
+            app:mainText="Add Post"
+            app:mainTextSize="10dp"
+            app:subAllCorner="30dp"
+            app:subText=" + " />
 
     </LinearLayout>
 

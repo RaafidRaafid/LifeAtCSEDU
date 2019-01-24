@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="abc"
+        android:layout_gravity="center"
         android:textColor="@drawable/front_but_text"
         android:textSize="18sp" />
 

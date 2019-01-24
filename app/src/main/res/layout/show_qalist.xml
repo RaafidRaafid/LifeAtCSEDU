@@ -35,14 +35,17 @@
             android:orientation="horizontal">
 
             <EditText
-                android:layout_width="320dp"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/FilterBox"/>
+                android:id="@+id/FilterBox"
+                android:textColor="#fff"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Done"
+                android:background="@android:color/holo_green_light"
+                android:textColor="@drawable/sem_but_text"
                 android:id="@+id/FilterDone"/>
         </LinearLayout>
 
@@ -103,10 +106,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="8"
+                android:layout_weight="4"
                 android:orientation="vertical">
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"

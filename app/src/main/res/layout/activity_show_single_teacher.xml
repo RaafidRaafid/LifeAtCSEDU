@@ -156,7 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete"
-            style="@style/Widget.AppCompat.Button.Colored"
+            android:textColor="@drawable/sem_but_text"
             android:background="@android:color/holo_green_light"
             android:visibility="visible" />
 
@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:text="Edit"
-            style="@style/Widget.AppCompat.Button.Colored"
+            android:textColor="@drawable/sem_but_text"
             android:background="@android:color/holo_green_light"
             android:visibility="visible" />
     </LinearLayout>
