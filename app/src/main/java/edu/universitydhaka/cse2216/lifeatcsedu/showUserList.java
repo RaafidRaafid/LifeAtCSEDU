@@ -1,12 +1,15 @@
 package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +32,10 @@ public class showUserList extends Activity {
     private ArrayList<String> mImageEmails = new ArrayList<>();
 
     String nowUser;
+    String filter;
+
+    EditText filterBox;
+    Button filterDone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +46,23 @@ public class showUserList extends Activity {
         userPageAuth = FirebaseAuth.getInstance();
 
         nowUser = getIntent().getStringExtra("current");
+        filter = getIntent().getStringExtra("filter");
 
+        filterBox = findViewById(R.id.FilterBoxUser);
+        filterDone = findViewById(R.id.FilterDoneUser);
+
+        filterDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(filterBox.getText().toString().trim() != null && !filterBox.getText().toString().trim().equals("")){
+                    Intent intent = new Intent(showUserList.this,showUserList.class);
+                    intent.putExtra("current",nowUser);
+                    intent.putExtra("filter",filterBox.getText().toString().trim());
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            }
+        });
 
         userPageDataBaseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -52,19 +75,32 @@ public class showUserList extends Activity {
                 int i=0;
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     User user = ds.getValue(User.class);
-                    mImageNames.add(user.getName());
-                    mImageURL.add(user.getDpURL());
-                    mImageEmails.add(user.getEmail());
-                    String akak = user.getEmail();
+                    if(filter != null && !filter.equals("")){
+                        if(user.getName().toLowerCase().contains(filter.toLowerCase())){
+                            mImageNames.add(user.getName());
+                            mImageURL.add(user.getDpURL());
+                            mImageEmails.add(user.getEmail());
+                            String akak = user.getEmail();
 
-                    System.out.println("akulasdksajldk " + ds.getKey() + " " + user.getName());
-
-                    if(akak.equals(nowUser)){
-                        Collections.swap(mImageNames,0,i);
-                        Collections.swap(mImageURL,0,i);
-                        Collections.swap(mImageEmails,0,i);
+                            if(akak.equals(nowUser)){
+                                Collections.swap(mImageNames,0,i);
+                                Collections.swap(mImageURL,0,i);
+                                Collections.swap(mImageEmails,0,i);
+                            }
+                        }
                     }
-                    i++;
+                    else{
+                        mImageNames.add(user.getName());
+                        mImageURL.add(user.getDpURL());
+                        mImageEmails.add(user.getEmail());
+                        String akak = user.getEmail();
+
+                        if(akak.equals(nowUser)){
+                            Collections.swap(mImageNames,0,i);
+                            Collections.swap(mImageURL,0,i);
+                            Collections.swap(mImageEmails,0,i);
+                        }
+                    }
                 }
                 initRecyclerView();
             }

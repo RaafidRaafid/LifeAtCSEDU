@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".userShowPage"
+    tools:context=".showUserList"
     android:background="@drawable/newback"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:orientation="vertical">
@@ -19,6 +19,28 @@
         android:text="User List"
         android:textColor="#808080"
         android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/FilterBoxUser"
+            android:textColor="#fff"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:background="@android:color/holo_green_light"
+            android:textColor="@drawable/sem_but_text"
+            android:id="@+id/FilterDoneUser"/>
+    </LinearLayout>
 
     <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
