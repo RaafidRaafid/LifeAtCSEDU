@@ -2,6 +2,7 @@ package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -60,6 +61,7 @@ public class editTeacher extends Activity {
                 //editTeacherDesignation.setText(teacher.getDesignation());
                 editTeacherResearchArea.setText(teacher.getResearchArea());
                 editTeacherSubmitButton.setVisibility(View.VISIBLE);
+                teacherDatabaseRef.removeEventListener(this);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -88,6 +90,11 @@ public class editTeacher extends Activity {
                 Toast.makeText(editTeacher.this,"Update Done",Toast.LENGTH_LONG).show();
             }
         });
+        Intent intent = new Intent(this, showSingleTeacher.class);
+        intent.putExtra("showKey",key);
+        intent.putExtra("designation",designation);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 }

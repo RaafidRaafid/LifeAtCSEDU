@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -64,7 +65,7 @@ class studentListRecyclerViewAdapter extends RecyclerView.Adapter<studentListRec
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView StudentNameList;
-        RelativeLayout parentLayout;
+        LinearLayout parentLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             StudentNameList = itemView.findViewById(R.id.student_name);

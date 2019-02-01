@@ -2,6 +2,7 @@ package edu.universitydhaka.cse2216.lifeatcsedu;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -26,18 +27,19 @@ public class editStaff extends Activity {
     private Button editStaffSubmitButton;
     private DatabaseReference staffDatabaseRef;
     Stuff staff;
-
+    String key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_staff);
 
-        staffDatabaseRef = FirebaseDatabase.getInstance().getReference().child("stuff");
         editStaffName =(EditText) findViewById(R.id.editStaffName);
         editStaffPhone = (EditText) findViewById(R.id.editStaffPhone);
         editStaffWork = (EditText) findViewById(R.id.editStaffWork);
         editStaffEmail = (EditText) findViewById(R.id.editStaffEmail);
         editStaffSubmitButton=(Button) findViewById(R.id.editStaffSubmitButton);
+        key = getIntent().getStringExtra("showKey");
+        staffDatabaseRef = FirebaseDatabase.getInstance().getReference().child("stuff/"+ key);
 
         staffDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -49,6 +51,7 @@ public class editStaff extends Activity {
                 editStaffPhone.setText(staff.getPhoneNo());
                 editStaffWork.setText(staff.getWork());
                 editStaffSubmitButton.setVisibility(View.VISIBLE);
+                staffDatabaseRef.removeEventListener(this);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -78,6 +81,10 @@ public class editStaff extends Activity {
                 Toast.makeText(editStaff.this,"Update Done",Toast.LENGTH_LONG).show();
             }
         });
+        Intent intent = new Intent(this, showSingleStuff.class);
+        intent.putExtra("showKey",key);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
         finish();
     }
 }

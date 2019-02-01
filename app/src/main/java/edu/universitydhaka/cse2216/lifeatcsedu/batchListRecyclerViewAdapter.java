@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -57,7 +58,7 @@ class batchListRecyclerViewAdapter extends RecyclerView.Adapter<batchListRecycle
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView BatchList;
-        RelativeLayout parentLayout;
+        LinearLayout parentLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             BatchList = itemView.findViewById(R.id.batch_name);
