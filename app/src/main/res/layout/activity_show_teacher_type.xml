@@ -25,15 +25,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="15dp"
-                android:paddingLeft="130dp"
-                android:paddingRight="70dp"
+                android:gravity="center"
                 android:paddingTop="15dp"
                 android:text="Chairman"
                 android:textSize="20dp"
                 android:textColor="@drawable/sem_but_text"
                 android:layout_centerInParent="true"
                 app:allCorner="30dp"
-                app:bgColor="@color/purple1"
+                app:bgColor="@color/purple2"
                 />
 
         </RelativeLayout>

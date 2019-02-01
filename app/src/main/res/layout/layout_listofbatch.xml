@@ -4,6 +4,7 @@
     android:layout_height="60dp"
     android:background="@drawable/layoutback"
     android:padding="15dp"
+    android:layout_marginBottom="10dp"
     android:id="@+id/batch_element_layout"
     android:orientation="vertical">
 

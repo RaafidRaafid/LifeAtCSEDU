@@ -4,7 +4,7 @@
     android:layout_width="250dp"
     android:layout_height="100dp"
     android:background="@drawable/layoutback"
-    android:layout_marginBottom="5dp"
+    android:layout_marginBottom="10dp"
     android:layout_marginTop="0dp"
     android:padding="15dp"
     android:id="@+id/qa_element_layout"

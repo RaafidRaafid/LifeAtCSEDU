@@ -133,6 +133,7 @@
         android:layout_marginEnd="0dp"
         android:onClick="toEditProfilePicture"
         android:text="Edit profile"
+        android:textColor="@drawable/sem_but_text"
         android:visibility="invisible" />
 
     <TextView

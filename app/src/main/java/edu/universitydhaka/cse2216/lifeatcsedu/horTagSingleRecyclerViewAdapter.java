@@ -35,6 +35,19 @@ public class horTagSingleRecyclerViewAdapter extends RecyclerView.Adapter<horTag
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
 
         viewHolder.tag.setBadgeMainText(currentFilters.get(i));
+        viewHolder.tag.setBadgeSubText("->");
+
+        viewHolder.tag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> currentFiltero = new ArrayList<>();
+                currentFiltero.add(currentFilters.get(i));
+                Intent intent = new Intent(context,showQAList.class);
+                intent.putExtra("currentFilters",currentFiltero);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                context.startActivity(intent);
+            }
+        });
 
     }
 

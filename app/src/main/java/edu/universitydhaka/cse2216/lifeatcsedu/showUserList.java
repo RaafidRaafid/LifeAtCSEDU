@@ -60,6 +60,7 @@ public class showUserList extends Activity {
                     intent.putExtra("filter",filterBox.getText().toString().trim());
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    filterDone.setOnClickListener(null);
                 }
             }
         });
@@ -87,6 +88,7 @@ public class showUserList extends Activity {
                                 Collections.swap(mImageURL,0,i);
                                 Collections.swap(mImageEmails,0,i);
                             }
+                            i++;
                         }
                     }
                     else{
@@ -95,11 +97,13 @@ public class showUserList extends Activity {
                         mImageEmails.add(user.getEmail());
                         String akak = user.getEmail();
 
+                        System.out.println(akak + " " + nowUser);
                         if(akak.equals(nowUser)){
                             Collections.swap(mImageNames,0,i);
                             Collections.swap(mImageURL,0,i);
                             Collections.swap(mImageEmails,0,i);
                         }
+                        i++;
                     }
                 }
                 initRecyclerView();
