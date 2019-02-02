@@ -75,7 +75,7 @@ public class showBatchList extends Activity {
                     mBatch.add(ds.getKey());
                     i++;
                 }
-                Collections.reverse(mBatch);
+                Collections.sort(mBatch);
                 initRecyclerView();
             }
 
